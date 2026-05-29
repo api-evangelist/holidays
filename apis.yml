@@ -1,32 +1,275 @@
 aid: holidays
-name: Holidays
-description: "Historical data regarding holidays"
-url: https://holidayapi.com/
+name: Holiday API
+description: >-
+  Holiday API is a commercial reference-data service that delivers verified public holidays,
+  observances, country and language metadata, and workday calculations for 250 countries and
+  3,680+ state/province subdivisions in 100+ languages. Operated by Gravity Boulevard, LLC,
+  it exposes five JSON endpoints under https://holidayapi.com/v1/ with official client
+  libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
+image: https://holidayapi.com/images/calendar.svg
+url: https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-29'
 x-source: public-apis/public-apis
-x-category: "Calendar"
-x-tier: 3
-x-tier-reason: bulk-registered-from-public-apis
+x-category: Calendar
+x-tier: 2
+x-tier-reason: official OpenAPI definition, official SDKs across 6 languages, commercial provider
 tags:
   - Calendar
-  - Public APIs
+  - Holidays
+  - Public Holidays
+  - Observances
+  - Reference Data
+  - Countries
+  - Languages
+  - Workdays
+  - Business Days
+  - Localization
 apis:
-  - name: Holidays
-    description: "Historical data regarding holidays"
-    humanURL: https://holidayapi.com/
-    baseURL: https://holidayapi.com/
+  - aid: holidays:holidays
+    name: Holiday API — Holidays
+    description: >-
+      Retrieves public holidays and observances for countries, states, and provinces. Supports
+      filtering by year, month, day, language, previous/upcoming queries, and free-text search.
+    image: https://holidayapi.com/images/calendar.svg
+    humanURL: https://holidayapi.com/docs
+    baseURL: https://holidayapi.com/v1
     tags:
+      - Holidays
+      - Calendar
+      - Public Holidays
+    properties:
+      - type: Documentation
+        url: https://holidayapi.com/docs
+      - type: OpenAPI
+        url: openapi/holidays-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/holidays-holiday-schema.json
+      - type: JSONStructure
+        url: json-structure/holidays-holiday-structure.json
+      - type: Example
+        url: examples/holidays-list-holidays-example.json
+      - type: NaftikoCapability
+        url: capabilities/holidays-holidays.yaml
+      - type: JSONLD
+        url: json-ld/holidays-context.jsonld
+    contact:
+      - FN: Holiday API
+        email: hello@holidayapi.com
+        url: https://holidayapi.com/contact
+  - aid: holidays:countries
+    name: Holiday API — Countries
+    description: >-
+      Lists supported countries with ISO codes (alpha-2, alpha-3, numeric), spoken languages,
+      currencies, flag image URLs, weekend days, and state/province subdivisions.
+    image: https://holidayapi.com/images/calendar.svg
+    humanURL: https://holidayapi.com/countries
+    baseURL: https://holidayapi.com/v1
+    tags:
+      - Countries
+      - Reference Data
+      - Subdivisions
+    properties:
+      - type: Documentation
+        url: https://holidayapi.com/docs
+      - type: OpenAPI
+        url: openapi/holidays-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/holidays-country-schema.json
+      - type: JSONStructure
+        url: json-structure/holidays-country-structure.json
+      - type: Example
+        url: examples/holidays-list-countries-example.json
+      - type: NaftikoCapability
+        url: capabilities/holidays-countries.yaml
+      - type: JSONLD
+        url: json-ld/holidays-context.jsonld
+    contact:
+      - FN: Holiday API
+        email: hello@holidayapi.com
+        url: https://holidayapi.com/contact
+  - aid: holidays:languages
+    name: Holiday API — Languages
+    description: >-
+      Lists supported languages (ISO 639-1 codes with documented exceptions) used to retrieve
+      localized holiday names. Holiday API supports 100+ languages.
+    image: https://holidayapi.com/images/calendar.svg
+    humanURL: https://holidayapi.com/languages
+    baseURL: https://holidayapi.com/v1
+    tags:
+      - Languages
+      - Localization
+      - Reference Data
+    properties:
+      - type: Documentation
+        url: https://holidayapi.com/docs
+      - type: OpenAPI
+        url: openapi/holidays-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/holidays-language-schema.json
+      - type: JSONStructure
+        url: json-structure/holidays-language-structure.json
+      - type: Example
+        url: examples/holidays-list-languages-example.json
+      - type: NaftikoCapability
+        url: capabilities/holidays-languages.yaml
+      - type: JSONLD
+        url: json-ld/holidays-context.jsonld
+    contact:
+      - FN: Holiday API
+        email: hello@holidayapi.com
+        url: https://holidayapi.com/contact
+  - aid: holidays:workdays
+    name: Holiday API — Workdays
+    description: >-
+      Two operations for working-day arithmetic that honor a country's workweek and public
+      holidays: get the workday that occurs a given number of days after a start date, and count
+      the number of workdays between two dates.
+    image: https://holidayapi.com/images/calendar.svg
+    humanURL: https://holidayapi.com/docs
+    baseURL: https://holidayapi.com/v1
+    tags:
+      - Workdays
+      - Business Days
       - Calendar
     properties:
       - type: Documentation
-        url: https://holidayapi.com/
+        url: https://holidayapi.com/docs
+      - type: OpenAPI
+        url: openapi/holidays-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/holidays-workday-schema.json
+      - type: JSONStructure
+        url: json-structure/holidays-workday-structure.json
+      - type: Example
+        url: examples/holidays-get-workday-example.json
+      - type: Example
+        url: examples/holidays-get-workdays-example.json
+      - type: NaftikoCapability
+        url: capabilities/holidays-workdays.yaml
+      - type: JSONLD
+        url: json-ld/holidays-context.jsonld
+    contact:
+      - FN: Holiday API
+        email: hello@holidayapi.com
+        url: https://holidayapi.com/contact
 common:
   - type: Website
     url: https://holidayapi.com/
+  - type: Portal
+    url: https://holidayapi.com/
+  - type: Documentation
+    url: https://holidayapi.com/docs
+  - type: OpenAPI
+    url: openapi/holidays-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/holidays-response-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-response-structure.json
+  - type: JSONLD
+    url: json-ld/holidays-context.jsonld
+  - type: SpectralRules
+    url: rules/holidays-rules.yml
+  - type: Vocabulary
+    url: vocabulary/holidays-vocabulary.yml
+  - type: Plans
+    url: plans/holidays-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/holidays-rate-limits.yml
+  - type: Pricing
+    url: https://holidayapi.com/pricing
+  - type: SignUp
+    url: https://holidayapi.com/signup
+  - type: Login
+    url: https://holidayapi.com/login
+  - type: TermsOfService
+    url: https://holidayapi.com/terms
+  - type: Contact
+    url: https://holidayapi.com/contact
+  - type: GitHubOrganization
+    url: https://github.com/holidayapi
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - type: Example
+    url: examples/holidays-error-example.json
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-go
+    data:
+      - name: Go SDK
+        description: Official Go client library (github.com/joshtronic/go-holidayapi mirror).
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-node
+    data:
+      - name: Node.js / TypeScript SDK
+        description: Official Node.js / TypeScript client library.
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-php
+    data:
+      - name: PHP SDK
+        description: Official PHP client library.
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-python
+    data:
+      - name: Python SDK
+        description: Official Python client library.
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-ruby
+    data:
+      - name: Ruby SDK
+        description: Official Ruby client library.
+  - type: SDK
+    url: https://github.com/holidayapi/holidayapi-raku
+    data:
+      - name: Raku SDK
+        description: Official Raku (Perl 6) client library.
+  - type: Features
+    data:
+      - name: Verified Holiday Data
+        description: Proprietary holiday generation system continuously verifies holidays for 250 countries.
+      - name: Subdivision Coverage
+        description: 3,680 state and province subdivisions on the States & Provinces plan via ISO 3166-2.
+      - name: 100+ Languages
+        description: Localized holiday names in over 100 languages via ISO 639-1 codes.
+      - name: Workday Calculator
+        description: Get workdays and count business days between dates honoring country-specific workweeks and holidays.
+      - name: Historic and Future Dates
+        description: Coverage from year 1 through year 2050+ on paid plans.
+      - name: Multiple Response Formats
+        description: JSON, XML, YAML, CSV, TSV, and PHP serialization.
+      - name: Offline Storage
+        description: Unlimited offline caching during active paid subscription; 24-hour window on free tier.
+      - name: No Velocity Throttling
+        description: All plans share a monthly request quota (1M requests/month) with no per-second or per-minute limits.
+      - name: Five-Nines Uptime
+        description: Enterprise-grade infrastructure designed for 99.999% availability.
+  - type: UseCases
+    data:
+      - name: Calendar and Scheduling Apps
+        description: Mark public holidays on calendar UIs and prevent scheduling on non-business days.
+      - name: Business Day SLA Calculation
+        description: Compute promised-by dates that honor weekends and country-specific holidays.
+      - name: HR and Payroll Systems
+        description: Determine paid time off, observed holidays, and country-specific leave eligibility.
+      - name: Localized Marketing Campaigns
+        description: Time outreach to align with public holidays in target countries and languages.
+      - name: E-commerce Fulfillment
+        description: Forecast shipping ETAs that respect carrier and destination-country holidays.
+      - name: Financial Settlement
+        description: Adjust transaction value dates and settlement windows around bank holidays.
+      - name: Global Workforce Management
+        description: Coordinate distributed teams across regions with accurate observed-holiday data.
+  - type: Integrations
+    data:
+      - name: Spreadsheets
+        description: Pull holiday data into Google Sheets / Excel via the JSON, CSV, or TSV format options.
+      - name: BI Tools
+        description: Feed holiday and workday data into Looker, Tableau, or Metabase for calendar dimensions.
+      - name: Workflow Automation
+        description: Trigger Zapier or n8n flows on upcoming/previous holidays per country.
+      - name: Calendar Platforms
+        description: Sync verified holiday data into Google Calendar, Outlook, or iCal feeds.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+    url: https://apievangelist.com

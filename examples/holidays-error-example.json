@@ -1,0 +1,9 @@
+{
+  "status": 400,
+  "requests": {
+    "used": 1000,
+    "available": 0,
+    "resets": "2026-06-01 00:00:00"
+  },
+  "error": "Missing parameters (key, country, year)."
+}

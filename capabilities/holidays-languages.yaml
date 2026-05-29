@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Holiday API — Languages
+  description: 'Holiday API — Languages. 1 operation. Lead operation: List Languages. Self-contained Naftiko capability for retrieving supported holiday name languages.'
+  tags:
+    - HolidayAPI
+    - Languages
+    - Localization
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys:
+      HOLIDAYAPI_KEY: HOLIDAYAPI_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: holidays-languages
+      baseUri: https://holidayapi.com
+      description: 'Holiday API — Languages business capability.'
+      resources:
+        - name: languages
+          path: /v1/languages
+          operations:
+            - name: listLanguages
+              method: GET
+              description: List supported languages for retrieving localized holiday names.
+              inputParameters:
+                - name: key
+                  in: query
+                  type: string
+                  value: '{{env.HOLIDAYAPI_KEY}}'
+                  required: true
+                - name: language
+                  in: query
+                  type: string
+                - name: search
+                  in: query
+                  type: string
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: holidays-languages-rest
+      port: 8080
+      description: REST adapter for Holiday API — Languages.
+      resources:
+        - path: /v1/languages
+          name: languages
+          description: REST surface for languages.
+          operations:
+            - method: GET
+              name: listLanguages
+              description: List supported languages.
+              call: holidays-languages.listLanguages
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: holidays-languages-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Holiday API — Languages.
+      tools:
+        - name: list-languages
+          description: List supported holiday-name languages.
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: holidays-languages.listLanguages
+          outputParameters:
+            - type: object
+              mapping: $.

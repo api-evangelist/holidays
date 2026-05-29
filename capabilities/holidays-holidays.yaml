@@ -1,0 +1,94 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Holiday API — Holidays
+  description: 'Holiday API — Holidays. 1 operation. Lead operation: List Holidays. Self-contained Naftiko capability covering the holidays surface of Holiday API.'
+  tags:
+    - HolidayAPI
+    - Holidays
+    - Calendar
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys:
+      HOLIDAYAPI_KEY: HOLIDAYAPI_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: holidays-holidays
+      baseUri: https://holidayapi.com
+      description: 'Holiday API — Holidays business capability. Self-contained, no shared references.'
+      resources:
+        - name: holidays
+          path: /v1/holidays
+          operations:
+            - name: listHolidays
+              method: GET
+              description: List public holidays and observances for countries, states, and provinces.
+              inputParameters:
+                - name: key
+                  in: query
+                  type: string
+                  value: '{{env.HOLIDAYAPI_KEY}}'
+                  required: true
+                - name: country
+                  in: query
+                  type: string
+                  required: true
+                - name: year
+                  in: query
+                  type: integer
+                  required: true
+                - name: month
+                  in: query
+                  type: integer
+                - name: day
+                  in: query
+                  type: integer
+                - name: public
+                  in: query
+                  type: boolean
+                - name: subdivisions
+                  in: query
+                  type: boolean
+                - name: language
+                  in: query
+                  type: string
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: holidays-holidays-rest
+      port: 8080
+      description: 'REST adapter for Holiday API — Holidays. One Spectral-compliant resource per consumed operation, prefixed with /v1.'
+      resources:
+        - path: /v1/holidays
+          name: holidays
+          description: REST surface for holidays.
+          operations:
+            - method: GET
+              name: listHolidays
+              description: List public holidays and observances.
+              call: holidays-holidays.listHolidays
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: holidays-holidays-mcp
+      port: 9090
+      transport: http
+      description: 'MCP adapter for Holiday API — Holidays. One tool per consumed operation.'
+      tools:
+        - name: list-holidays
+          description: List public holidays and observances for a country and year.
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: holidays-holidays.listHolidays
+          outputParameters:
+            - type: object
+              mapping: $.

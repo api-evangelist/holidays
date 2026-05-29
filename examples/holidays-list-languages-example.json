@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "requests": {
+    "used": 951,
+    "available": 49,
+    "resets": "2026-06-01 00:00:00"
+  },
+  "languages": [
+    {"code": "en", "name": "English"},
+    {"code": "es", "name": "Spanish"},
+    {"code": "fr", "name": "French"},
+    {"code": "de", "name": "German"},
+    {"code": "zh", "name": "Chinese"}
+  ]
+}

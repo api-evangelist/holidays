@@ -1,0 +1,129 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Holiday API
+providerId: holidays
+created: '2026-05-29'
+modified: '2026-05-29'
+reconciled: true
+tags:
+  - Calendar
+  - Holidays
+  - Reference Data
+  - Localization
+description: >-
+  Holiday API offers a free tier and two annual subscription plans, all sharing the same
+  1,000,000 requests/month allowance with no per-second throttling. Paid plans unlock commercial
+  use, the full 1-2050+ year range, and (on the higher tier) state/province subdivisions for 250
+  countries. Billing is annual via credit card in USD; invoicing is not offered up-front.
+sources:
+  - https://holidayapi.com/pricing
+  - https://holidayapi.com/docs
+plans:
+  - id: holidays-free
+    name: Free
+    type: freemium
+    description: Free tier limited to historic holidays (prior years only) with 24-hour offline
+      caching. No commercial use.
+    entries:
+      - label: Monthly requests
+        name: monthly_requests
+        type: quota
+        metric: request
+        limit: 1000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Offline storage window
+        name: offline_window_hours
+        type: quota
+        metric: hour
+        limit: 24
+        timeFrame: rolling
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+    elements:
+      - name: Historic holidays only
+      - name: 250 countries
+      - name: 100+ languages
+      - name: Non-commercial use only
+  - id: holidays-countries
+    name: Countries
+    type: subscription
+    description: Country-level plan with commercial use, all years (1-2050+), and full language
+      coverage. $249/year.
+    entries:
+      - label: Subscription
+        name: countries_subscription
+        type: subscription
+        metric: year
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: '249.00'
+        userMultiplied: false
+      - label: Monthly requests
+        name: monthly_requests
+        type: quota
+        metric: request
+        limit: 1000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+    elements:
+      - name: Commercial use
+      - name: Holidays for years 1-2050+
+      - name: 250 countries
+      - name: 100+ languages
+      - name: Unlimited offline storage during active subscription
+  - id: holidays-states-provinces
+    name: States & Provinces
+    type: subscription
+    description: Top-tier plan adding state/province subdivisions (3,680 subdivisions across 250
+      countries) on top of all Countries plan features. $399/year.
+    entries:
+      - label: Subscription
+        name: states_provinces_subscription
+        type: subscription
+        metric: year
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: '399.00'
+        userMultiplied: false
+      - label: Monthly requests
+        name: monthly_requests
+        type: quota
+        metric: request
+        limit: 1000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+    elements:
+      - name: Commercial use
+      - name: Holidays for years 1-2050+
+      - name: 250 countries
+      - name: 3,680 states & provinces
+      - name: 100+ languages
+      - name: Unlimited offline storage during active subscription
+billing:
+  cycle: annual
+  currency: USD
+  paymentMethods:
+    - credit card
+  invoiceUpFront: false
+  invoicesAvailable: in-account after upgrade
+support:
+  channels:
+    - email
+  description: Email support from senior software engineers across all plans.

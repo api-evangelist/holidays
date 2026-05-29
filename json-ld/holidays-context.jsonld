@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "iso": "https://www.iso.org/standard/",
+    "holidayapi": "https://holidayapi.com/v1/",
+
+    "Holiday": "schema:Event",
+    "Country": "schema:Country",
+    "Language": "schema:Language",
+    "Workday": "schema:Action",
+    "Response": "schema:Response",
+
+    "name": "schema:name",
+    "date": {"@id": "schema:startDate", "@type": "xsd:date"},
+    "observed": {"@id": "holidayapi:observed", "@type": "xsd:date"},
+    "public": {"@id": "holidayapi:public", "@type": "xsd:boolean"},
+    "country": {"@id": "schema:addressCountry"},
+    "uuid": {"@id": "schema:identifier"},
+    "weekday": "holidayapi:weekday",
+    "subdivisions": {"@id": "holidayapi:subdivisions", "@container": "@list"},
+
+    "code": "schema:identifier",
+    "codes": "holidayapi:codes",
+    "alpha-2": "holidayapi:alpha2",
+    "alpha-3": "holidayapi:alpha3",
+    "numeric": "holidayapi:numericCode",
+    "languages": {"@id": "schema:availableLanguage", "@container": "@list"},
+    "currencies": {"@id": "schema:currenciesAccepted", "@container": "@list"},
+    "alpha": "holidayapi:currencyCode",
+    "flag": {"@id": "schema:image", "@type": "@id"},
+    "weekend": {"@id": "holidayapi:weekend", "@container": "@list"},
+
+    "status": {"@id": "schema:status", "@type": "xsd:integer"},
+    "requests": "holidayapi:quota",
+    "used": {"@id": "holidayapi:requestsUsed", "@type": "xsd:integer"},
+    "available": {"@id": "holidayapi:requestsAvailable", "@type": "xsd:integer"},
+    "resets": {"@id": "holidayapi:quotaResetsAt"},
+    "error": "schema:error",
+    "warning": "holidayapi:warning",
+
+    "holidays": {"@id": "holidayapi:holidays", "@container": "@list"},
+    "countries": {"@id": "holidayapi:countries", "@container": "@list"},
+    "workdays": {"@id": "holidayapi:workdays", "@type": "xsd:integer"}
+  }
+}

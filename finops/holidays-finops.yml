@@ -1,0 +1,78 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Holiday API
+providerId: holidays
+created: '2026-05-29'
+modified: '2026-05-29'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - Calendar
+  - Reference Data
+description: >-
+  FOCUS-aligned FinOps for Holiday API. The provider sells a flat annual subscription per tier
+  (Countries $249/year, States & Provinces $399/year) with a single shared monthly request quota
+  of 1,000,000 requests. There is no per-request charge and no overage billing — exceeding the
+  monthly quota returns HTTP 429 until reset on the first of the next month at 00:00 UTC.
+sources:
+  - https://holidayapi.com/pricing
+  - https://holidayapi.com/docs
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Gravity Boulevard, LLC (dba Holiday API)
+serviceCategory: Reference Data / Calendar
+billingModel:
+  pricingCategory: Tiered Annual Subscription
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+    - Purchase
+  overageModel: hard-cap (HTTP 429, no overage billing)
+focusColumns:
+  ServiceName: Holiday API
+  ServiceCategory: Reference Data
+  ProviderName: Holiday API
+  PublisherName: Gravity Boulevard, LLC
+  InvoiceIssuerName: Gravity Boulevard, LLC
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+meters:
+  - name: subscription_fee
+    description: Flat annual subscription per plan tier (Countries $249/year, States & Provinces $399/year).
+    unit: year
+    aggregation: max
+    dimensions:
+      - plan
+  - name: monthly_requests
+    description: Total successful + error requests against the shared monthly quota, regardless of endpoint.
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api_key
+      - endpoint
+principles:
+  - name: Visibility
+    description: Every successful response includes a requests envelope (used / available / resets).
+      Scrape the headers/envelope into your observability pipeline to track burn rate per API key.
+  - name: Allocation
+    description: Holiday API tracks usage at the API key level. Issue distinct keys per environment
+      (dev, staging, production) and per integration to enable chargeback and isolate quota burn.
+  - name: Optimization
+    description: Cache aggressively. Holidays are deterministic per (country, year) and rarely change;
+      the Countries and Languages endpoints change even less. Pre-fetch annual data on Jan 1 and
+      serve from local cache to minimize quota use. The free plan permits a 24-hour offline window;
+      paid plans permit unlimited offline storage during active subscription.
+  - name: Accountability
+    description: Failed (4xx) requests still consume quota except for auth errors during key creation.
+      Monitor 4xx/5xx rate to avoid wasted quota. When approaching quota, switch reads to the
+      offline cache rather than upgrading — there is no higher quota tier available; the cap is
+      1,000,000 requests/month on all plans.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

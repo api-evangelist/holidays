@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/holidays/main/json-schema/holidays-holiday-schema.json",
+  "title": "Holiday",
+  "description": "A public holiday or observance as returned by Holiday API.",
+  "type": "object",
+  "required": ["name", "date", "observed", "public", "country", "uuid", "weekday"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the holiday or observance."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Calendar date on which the holiday actually occurs (YYYY-MM-DD)."
+    },
+    "observed": {
+      "type": "string",
+      "format": "date",
+      "description": "Calendar date on which the holiday is observed (YYYY-MM-DD)."
+    },
+    "public": {
+      "type": "boolean",
+      "description": "Whether the entry is a public holiday."
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code, or ISO 3166-2 subdivision code."
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Stable identifier for this holiday across years."
+    },
+    "weekday": {
+      "type": "object",
+      "required": ["date", "observed"],
+      "properties": {
+        "date": {
+          "type": "object",
+          "required": ["name", "numeric"],
+          "properties": {
+            "name": {"type": "string"},
+            "numeric": {"type": ["string", "integer"]}
+          }
+        },
+        "observed": {
+          "type": "object",
+          "required": ["name", "numeric"],
+          "properties": {
+            "name": {"type": "string"},
+            "numeric": {"type": ["string", "integer"]}
+          }
+        }
+      }
+    },
+    "subdivisions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "List of applicable subdivisions. Empty array means all subdivisions apply."
+    }
+  }
+}

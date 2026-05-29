@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Country",
+  "type": "object",
+  "properties": {
+    "code": {"type": "string"},
+    "name": {"type": "string"},
+    "codes": {"type": "object"},
+    "languages": {"type": "array", "items": {"type": "string"}},
+    "currencies": {"type": "array", "items": {"type": "object"}},
+    "flag": {"type": "string"},
+    "subdivisions": {"type": "array", "items": {"type": "object"}},
+    "weekend": {"type": "array", "items": {"type": "object"}}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/holidays/main/json-schema/holidays-language-schema.json",
+  "title": "Language",
+  "description": "A language supported by Holiday API for localized holiday names.",
+  "type": "object",
+  "required": ["code", "name"],
+  "properties": {
+    "code": {"type": "string", "description": "ISO 639-1 language code (with documented exceptions)."},
+    "name": {"type": "string", "description": "English name of the language."}
+  }
+}

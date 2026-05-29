@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Response",
+  "type": "object",
+  "properties": {
+    "status": {"type": "integer"},
+    "requests": {
+      "type": "object",
+      "properties": {
+        "used": {"type": "integer"},
+        "available": {"type": "integer"},
+        "resets": {"type": "string"}
+      }
+    },
+    "error": {"type": "string"},
+    "warning": {"type": "string"}
+  }
+}

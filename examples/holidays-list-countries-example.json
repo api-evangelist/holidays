@@ -1,0 +1,40 @@
+{
+  "status": 200,
+  "requests": {
+    "used": 950,
+    "available": 50,
+    "resets": "2026-06-01 00:00:00"
+  },
+  "countries": [
+    {
+      "code": "US",
+      "name": "United States of America",
+      "codes": {
+        "alpha-2": "US",
+        "alpha-3": "USA",
+        "numeric": 840
+      },
+      "languages": ["en"],
+      "currencies": [
+        {"alpha": "USD"}
+      ],
+      "flag": "https://holidayapi.com/images/flags/64/us.png",
+      "subdivisions": [
+        {
+          "code": "US-CA",
+          "name": "California",
+          "languages": ["en"]
+        },
+        {
+          "code": "US-TX",
+          "name": "Texas",
+          "languages": ["en"]
+        }
+      ],
+      "weekend": [
+        {"name": "Saturday", "numeric": 6},
+        {"name": "Sunday", "numeric": 7}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+name: Holiday API Domain Vocabulary
+provider: Holiday API
+providerId: holidays
+description: Tag-derived vocabulary for the Holiday API surface, sourced from openapi/ tags and the provider's domain concepts.
+sources:
+  - https://holidayapi.com/docs
+  - https://holidayapi.com/holidayapi-v1-openapi.yaml
+terms:
+  - term: Holiday
+    description: A public holiday or observance occurring on a specific date for a country or subdivision.
+  - term: Observance
+    description: A non-public holiday or commemorative day tracked alongside public holidays.
+  - term: Public Holiday
+    description: A holiday recognized by government as a non-working day under public_holiday=true.
+  - term: Subdivision
+    description: A state, province, or other ISO 3166-2 administrative division within a country.
+  - term: Country
+    description: A sovereign nation identified by ISO 3166-1 alpha-2, alpha-3, or numeric codes.
+  - term: Language
+    description: An ISO 639-1 language code used to localize holiday names.
+  - term: Workday
+    description: A business day for a country, excluding weekend days and public holidays.
+  - term: Weekend
+    description: The set of days a country treats as non-working (typically Saturday and Sunday).
+  - term: Observed Date
+    description: The date a holiday is officially observed when it differs from the calendar date (e.g., moved to Monday).
+  - term: Calendar Date
+    description: The actual ISO 8601 date on which a holiday falls regardless of observance.
+  - term: Quota
+    description: The monthly request allotment for an API key, reported in the requests envelope.
+  - term: API Key
+    description: A UUID-format secret passed as the 'key' query parameter to authenticate every request.
+  - term: Response Envelope
+    description: The wrapper containing status, requests usage, and the operation-specific payload returned by every endpoint.
+  - term: Search
+    description: A free-text query against holiday names (min 5 chars), country names, or language names (min 2 chars).
+  - term: Format
+    description: The serialization format of the response — one of csv, json, php, tsv, yaml, xml. Defaults to JSON.
+  - term: Upcoming
+    description: A query mode returning the first holiday after a given date.
+  - term: Previous
+    description: A query mode returning the first holiday before a given date.

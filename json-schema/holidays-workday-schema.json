@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/holidays/main/json-schema/holidays-workday-schema.json",
+  "title": "Workday",
+  "description": "Result of a workday offset calculation for a country.",
+  "type": "object",
+  "required": ["date", "weekday"],
+  "properties": {
+    "date": {"type": "string", "format": "date", "description": "Calculated workday (YYYY-MM-DD)."},
+    "weekday": {
+      "type": "object",
+      "required": ["date", "observed"],
+      "properties": {
+        "date": {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "numeric": {"type": ["string", "integer"]}
+          }
+        },
+        "observed": {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "numeric": {"type": ["string", "integer"]}
+          }
+        }
+      }
+    }
+  }
+}

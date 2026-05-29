@@ -1,0 +1,50 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Holiday API
+providerId: holidays
+created: '2026-05-29'
+modified: '2026-05-29'
+reconciled: true
+tags:
+  - Rate Limiting
+  - Calendar
+  - Holidays
+description: >-
+  Holiday API explicitly does not throttle by velocity ("No request throttling" per pricing FAQ).
+  Limits are enforced as a single monthly request quota of 1,000,000 requests per API key, shared
+  across all endpoints (holidays, countries, languages, workday, workdays). When the monthly quota
+  is exceeded, the API returns HTTP 429. Live usage is reported on every successful response under
+  the requests envelope (used / available / resets).
+sources:
+  - https://holidayapi.com/docs
+  - https://holidayapi.com/pricing
+responseCodes:
+  usageLimitReached: 429
+  serverError: 500
+quotaResetSchedule: First of every calendar month at 00:00 UTC
+liveUsageReporting:
+  location: response body
+  fields:
+    - requests.used
+    - requests.available
+    - requests.resets
+limits:
+  - name: Monthly request quota (all endpoints)
+    scope: api-key
+    metric: requests_per_month
+    limit: 1000000
+    timeFrame: month
+    appliesTo:
+      - /v1/holidays
+      - /v1/countries
+      - /v1/languages
+      - /v1/workday
+      - /v1/workdays
+throttling:
+  perSecond: none
+  perMinute: none
+  burst: none
+  notes: >-
+    Provider explicitly markets "No request throttling" — all plans share the same 1M
+    requests/month allowance with no velocity limits. Use the response envelope to track usage.

@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "requests": {
+    "used": 953,
+    "available": 47,
+    "resets": "2026-06-01 00:00:00"
+  },
+  "workdays": 8
+}

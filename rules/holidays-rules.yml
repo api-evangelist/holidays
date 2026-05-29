@@ -1,0 +1,96 @@
+extends:
+  - spectral:oas
+rules:
+  info-title-required:
+    description: Info title must be present
+    severity: error
+    given: $.info
+    then: {field: title, function: truthy}
+  info-description-required:
+    description: Info description must be present
+    severity: error
+    given: $.info
+    then: {field: description, function: truthy}
+  info-contact-required:
+    description: Info contact block must be present
+    severity: warn
+    given: $.info
+    then: {field: contact, function: truthy}
+  info-termsOfService-required:
+    description: Info termsOfService URL must be present
+    severity: warn
+    given: $.info
+    then: {field: termsOfService, function: truthy}
+  operation-operationid-required:
+    description: Every operation must have an operationId
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: operationId, function: truthy}
+  operation-summary-required:
+    description: Every operation must have a summary
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: summary, function: truthy}
+  operation-summary-title-case:
+    description: Operation summaries should use Title Case (Holiday API convention)
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z][a-z0-9'/-]*)(\\s+([A-Za-z0-9'/-]+))*$"
+  operation-tags-required:
+    description: Every operation must have at least one tag
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: tags, function: truthy}
+  operation-description-required:
+    description: Every operation should have a description
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: description, function: truthy}
+  api-key-query-param-required:
+    description: Holiday API operations must accept a 'key' query parameter (per provider auth convention)
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.name=='key')]
+    then:
+      field: in
+      function: pattern
+      functionOptions:
+        match: "^query$"
+  api-key-required-true:
+    description: The 'key' parameter must be required
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.name=='key')]
+    then: {field: required, function: truthy}
+  paths-must-be-versioned:
+    description: All paths must be prefixed with /v1 (Holiday API versioning convention)
+    severity: error
+    given: $.paths
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^/v1/"
+  servers-defined:
+    description: Top-level servers must be defined
+    severity: error
+    given: $
+    then: {field: servers, function: truthy}
+  components-schemas-defined:
+    description: Reusable schemas must live under components.schemas
+    severity: warn
+    given: $.components
+    then: {field: schemas, function: truthy}
+  response-schema-required:
+    description: 2xx responses must reference a schema
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].responses['200'].content['application/json']
+    then: {field: schema, function: truthy}
+  format-param-enum-consistent:
+    description: When present, format parameter must enumerate the supported response formats
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.name=='format')]
+    then:
+      field: schema.enum
+      function: truthy

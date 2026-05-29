@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/holidays/main/json-schema/holidays-response-schema.json",
+  "title": "Response",
+  "description": "Common envelope returned by every Holiday API operation.",
+  "type": "object",
+  "required": ["status", "requests"],
+  "properties": {
+    "status": {"type": "integer", "description": "HTTP-aligned status code mirrored in the response body."},
+    "requests": {
+      "type": "object",
+      "required": ["used", "available", "resets"],
+      "properties": {
+        "used": {"type": "integer", "description": "Requests consumed in the current month."},
+        "available": {"type": "integer", "description": "Requests remaining in the current month."},
+        "resets": {"type": "string", "description": "Datetime (UTC) at which monthly quota resets."}
+      }
+    },
+    "error": {"type": "string", "description": "Human-readable explanation of any error."},
+    "warning": {"type": "string", "description": "Additional information about the returned data."}
+  }
+}
