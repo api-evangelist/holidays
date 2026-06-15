@@ -1,11 +1,10 @@
 aid: holidays
 name: Holiday API
 description: >-
-  Holiday API is a commercial reference-data service that delivers verified public holidays,
-  observances, country and language metadata, and workday calculations for 250 countries and
-  3,680+ state/province subdivisions in 100+ languages. Operated by Gravity Boulevard, LLC,
-  it exposes five JSON endpoints under https://holidayapi.com/v1/ with official client
-  libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
+  Holiday API is a commercial reference-data service that delivers verified public holidays, observances, country and
+  language metadata, and workday calculations for 250 countries and 3,680+ state/province subdivisions in 100+
+  languages. Operated by Gravity Boulevard, LLC, it exposes five JSON endpoints under https://holidayapi.com/v1/ with
+  official client libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
 image: https://holidayapi.com/images/calendar.svg
 url: https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml
 specificationVersion: '0.20'
@@ -30,8 +29,8 @@ apis:
   - aid: holidays:holidays
     name: Holiday API — Holidays
     description: >-
-      Retrieves public holidays and observances for countries, states, and provinces. Supports
-      filtering by year, month, day, language, previous/upcoming queries, and free-text search.
+      Retrieves public holidays and observances for countries, states, and provinces. Supports filtering by year, month,
+      day, language, previous/upcoming queries, and free-text search.
     image: https://holidayapi.com/images/calendar.svg
     humanURL: https://holidayapi.com/docs
     baseURL: https://holidayapi.com/v1
@@ -50,8 +49,6 @@ apis:
         url: json-structure/holidays-holiday-structure.json
       - type: Example
         url: examples/holidays-list-holidays-example.json
-      - type: NaftikoCapability
-        url: capabilities/holidays-holidays.yaml
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
     contact:
@@ -61,8 +58,8 @@ apis:
   - aid: holidays:countries
     name: Holiday API — Countries
     description: >-
-      Lists supported countries with ISO codes (alpha-2, alpha-3, numeric), spoken languages,
-      currencies, flag image URLs, weekend days, and state/province subdivisions.
+      Lists supported countries with ISO codes (alpha-2, alpha-3, numeric), spoken languages, currencies, flag image
+      URLs, weekend days, and state/province subdivisions.
     image: https://holidayapi.com/images/calendar.svg
     humanURL: https://holidayapi.com/countries
     baseURL: https://holidayapi.com/v1
@@ -81,8 +78,6 @@ apis:
         url: json-structure/holidays-country-structure.json
       - type: Example
         url: examples/holidays-list-countries-example.json
-      - type: NaftikoCapability
-        url: capabilities/holidays-countries.yaml
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
     contact:
@@ -92,8 +87,8 @@ apis:
   - aid: holidays:languages
     name: Holiday API — Languages
     description: >-
-      Lists supported languages (ISO 639-1 codes with documented exceptions) used to retrieve
-      localized holiday names. Holiday API supports 100+ languages.
+      Lists supported languages (ISO 639-1 codes with documented exceptions) used to retrieve localized holiday names.
+      Holiday API supports 100+ languages.
     image: https://holidayapi.com/images/calendar.svg
     humanURL: https://holidayapi.com/languages
     baseURL: https://holidayapi.com/v1
@@ -112,8 +107,6 @@ apis:
         url: json-structure/holidays-language-structure.json
       - type: Example
         url: examples/holidays-list-languages-example.json
-      - type: NaftikoCapability
-        url: capabilities/holidays-languages.yaml
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
     contact:
@@ -123,9 +116,8 @@ apis:
   - aid: holidays:workdays
     name: Holiday API — Workdays
     description: >-
-      Two operations for working-day arithmetic that honor a country's workweek and public
-      holidays: get the workday that occurs a given number of days after a start date, and count
-      the number of workdays between two dates.
+      Two operations for working-day arithmetic that honor a country's workweek and public holidays: get the workday
+      that occurs a given number of days after a start date, and count the number of workdays between two dates.
     image: https://holidayapi.com/images/calendar.svg
     humanURL: https://holidayapi.com/docs
     baseURL: https://holidayapi.com/v1
@@ -146,8 +138,6 @@ apis:
         url: examples/holidays-get-workday-example.json
       - type: Example
         url: examples/holidays-get-workdays-example.json
-      - type: NaftikoCapability
-        url: capabilities/holidays-workdays.yaml
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
     contact:
