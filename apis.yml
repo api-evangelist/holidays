@@ -47,7 +47,7 @@ apis:
         url: json-schema/holidays-holiday-schema.json
       - type: JSONStructure
         url: json-structure/holidays-holiday-structure.json
-      - type: Example
+      - type: Examples
         url: examples/holidays-list-holidays-example.json
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
@@ -76,7 +76,7 @@ apis:
         url: json-schema/holidays-country-schema.json
       - type: JSONStructure
         url: json-structure/holidays-country-structure.json
-      - type: Example
+      - type: Examples
         url: examples/holidays-list-countries-example.json
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
@@ -105,7 +105,7 @@ apis:
         url: json-schema/holidays-language-schema.json
       - type: JSONStructure
         url: json-structure/holidays-language-structure.json
-      - type: Example
+      - type: Examples
         url: examples/holidays-list-languages-example.json
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
@@ -134,9 +134,9 @@ apis:
         url: json-schema/holidays-workday-schema.json
       - type: JSONStructure
         url: json-structure/holidays-workday-structure.json
-      - type: Example
+      - type: Examples
         url: examples/holidays-get-workday-example.json
-      - type: Example
+      - type: Examples
         url: examples/holidays-get-workdays-example.json
       - type: JSONLD
         url: json-ld/holidays-context.jsonld
@@ -169,7 +169,7 @@ common:
     url: rate-limits/holidays-rate-limits.yml
   - type: Pricing
     url: https://holidayapi.com/pricing
-  - type: SignUp
+  - type: Signup
     url: https://holidayapi.com/signup
   - type: Login
     url: https://holidayapi.com/login
@@ -181,34 +181,34 @@ common:
     url: https://github.com/holidayapi
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
-  - type: Example
+  - type: Examples
     url: examples/holidays-error-example.json
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-go
     data:
       - name: Go SDK
         description: Official Go client library (github.com/joshtronic/go-holidayapi mirror).
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-node
     data:
       - name: Node.js / TypeScript SDK
         description: Official Node.js / TypeScript client library.
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-php
     data:
       - name: PHP SDK
         description: Official PHP client library.
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-python
     data:
       - name: Python SDK
         description: Official Python client library.
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-ruby
     data:
       - name: Ruby SDK
         description: Official Ruby client library.
-  - type: SDK
+  - type: SDKs
     url: https://github.com/holidayapi/holidayapi-raku
     data:
       - name: Raku SDK
