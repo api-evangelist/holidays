@@ -145,6 +145,8 @@ apis:
         email: hello@holidayapi.com
         url: https://holidayapi.com/contact
 common:
+  - type: AgenticAccess
+    url: agentic-access/holidays-agentic-access.yml
   - type: DomainSecurity
     url: security/holidays-domain-security.yml
   - type: Website
