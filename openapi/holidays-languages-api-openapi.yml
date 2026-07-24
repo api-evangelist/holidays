@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: Holiday Countries Languages API
+  description: Holidays are hard. We make them easy.
+  termsOfService: https://holidayapi.com/terms
+  contact:
+    name: Holiday API
+    email: hello@holidayapi.com
+  version: '1.0'
+servers:
+- url: https://holidayapi.com
+  description: Holiday API v1
+tags:
+- name: Languages
+  description: Supported languages for retrieving localized holiday names.
+paths:
+  /v1/languages:
+    get:
+      operationId: listLanguages
+      tags:
+      - Languages
+      summary: List Languages
+      description: Retrieves a list of supported languages.
+      externalDocs:
+        description: Developer Documentation
+        url: https://holidayapi.com/docs
+      parameters:
+      - name: key
+        description: Your API key.
+        required: true
+        in: query
+        schema:
+          type: string
+          format: uuid
+        example: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+      - name: language
+        description: Return only the languages with the specified code.
+        required: false
+        in: query
+        schema:
+          type: string
+        example: US
+      - name: search
+        description: Search languages by code and name.
+        required: false
+        in: query
+        schema:
+          type: string
+          minimum: 2
+        example: United
+      - name: format
+        description: Response format.
+        required: false
+        in: query
+        schema:
+          type: string
+          default: json
+          enum:
+          - csv
+          - json
+          - php
+          - tsv
+          - yaml
+          - xml
+        example: json
+      - name: pretty
+        description: Prettifies results to be more human-readable.
+        required: false
+        in: query
+        schema:
+          type: boolean
+          default: false
+        example: true
+      responses:
+        '200':
+          description: Success! Everything is A-OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/languages'
+components:
+  schemas:
+    languages:
+      allOf:
+      - $ref: '#/components/schemas/response'
+      - type: object
+        required:
+        - languages
+        properties:
+          countries:
+            type: array
+            items:
+              $ref: '#/components/schemas/language'
+    response:
+      type: object
+      required:
+      - status
+      - requests
+      properties:
+        status:
+          type: integer
+          format: int32
+          example: 200
+        requests:
+          type: object
+          required:
+          - used
+          - available
+          - resets
+          properties:
+            used:
+              type: integer
+              format: int32
+              example: 136
+            available:
+              type: integer
+              format: int32
+              example: 864
+            resets:
+              type: string
+              example: '2019-09-01 00:00:00'
+        error:
+          type: string
+          example: An error has occurred.
+        warning:
+          type: string
+          example: An warning has occurred.
+    language:
+      type: object
+      required:
+      - code
+      - name
+      properties:
+        code:
+          type: string
+          example: en
+        name:
+          type: string
+          example: English
