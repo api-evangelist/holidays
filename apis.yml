@@ -5,6 +5,18 @@ description: >-
   language metadata, and workday calculations for 250 countries and 3,680+ state/province subdivisions in 100+
   languages. Operated by Gravity Boulevard, LLC, it exposes five JSON endpoints under https://holidayapi.com/v1/ with
   official client libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://holidayapi.com/images/calendar.svg
 url: https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml
 specificationVersion: '0.20'
@@ -26,125 +38,169 @@ tags:
   - Business Days
   - Localization
 apis:
-  - aid: holidays:holidays
-    name: Holiday API — Holidays
-    description: >-
-      Retrieves public holidays and observances for countries, states, and provinces. Supports filtering by year, month,
-      day, language, previous/upcoming queries, and free-text search.
-    image: https://holidayapi.com/images/calendar.svg
-    humanURL: https://holidayapi.com/docs
-    baseURL: https://holidayapi.com/v1
-    tags:
-      - Holidays
-      - Calendar
-      - Public Holidays
-    properties:
-      - type: Documentation
-        url: https://holidayapi.com/docs
-      - type: OpenAPI
-        url: openapi/holidays-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/holidays-holiday-schema.json
-      - type: JSONStructure
-        url: json-structure/holidays-holiday-structure.json
-      - type: Examples
-        url: examples/holidays-list-holidays-example.json
-      - type: JSONLD
-        url: json-ld/holidays-context.jsonld
-    contact:
-      - FN: Holiday API
-        email: hello@holidayapi.com
-        url: https://holidayapi.com/contact
-  - aid: holidays:countries
-    name: Holiday API — Countries
-    description: >-
-      Lists supported countries with ISO codes (alpha-2, alpha-3, numeric), spoken languages, currencies, flag image
-      URLs, weekend days, and state/province subdivisions.
-    image: https://holidayapi.com/images/calendar.svg
-    humanURL: https://holidayapi.com/countries
-    baseURL: https://holidayapi.com/v1
-    tags:
-      - Countries
-      - Reference Data
-      - Subdivisions
-    properties:
-      - type: Documentation
-        url: https://holidayapi.com/docs
-      - type: OpenAPI
-        url: openapi/holidays-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/holidays-country-schema.json
-      - type: JSONStructure
-        url: json-structure/holidays-country-structure.json
-      - type: Examples
-        url: examples/holidays-list-countries-example.json
-      - type: JSONLD
-        url: json-ld/holidays-context.jsonld
-    contact:
-      - FN: Holiday API
-        email: hello@holidayapi.com
-        url: https://holidayapi.com/contact
-  - aid: holidays:languages
-    name: Holiday API — Languages
-    description: >-
-      Lists supported languages (ISO 639-1 codes with documented exceptions) used to retrieve localized holiday names.
-      Holiday API supports 100+ languages.
-    image: https://holidayapi.com/images/calendar.svg
-    humanURL: https://holidayapi.com/languages
-    baseURL: https://holidayapi.com/v1
-    tags:
-      - Languages
-      - Localization
-      - Reference Data
-    properties:
-      - type: Documentation
-        url: https://holidayapi.com/docs
-      - type: OpenAPI
-        url: openapi/holidays-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/holidays-language-schema.json
-      - type: JSONStructure
-        url: json-structure/holidays-language-structure.json
-      - type: Examples
-        url: examples/holidays-list-languages-example.json
-      - type: JSONLD
-        url: json-ld/holidays-context.jsonld
-    contact:
-      - FN: Holiday API
-        email: hello@holidayapi.com
-        url: https://holidayapi.com/contact
-  - aid: holidays:workdays
-    name: Holiday API — Workdays
-    description: >-
-      Two operations for working-day arithmetic that honor a country's workweek and public holidays: get the workday
-      that occurs a given number of days after a start date, and count the number of workdays between two dates.
-    image: https://holidayapi.com/images/calendar.svg
-    humanURL: https://holidayapi.com/docs
-    baseURL: https://holidayapi.com/v1
-    tags:
-      - Workdays
-      - Business Days
-      - Calendar
-    properties:
-      - type: Documentation
-        url: https://holidayapi.com/docs
-      - type: OpenAPI
-        url: openapi/holidays-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/holidays-workday-schema.json
-      - type: JSONStructure
-        url: json-structure/holidays-workday-structure.json
-      - type: Examples
-        url: examples/holidays-get-workday-example.json
-      - type: Examples
-        url: examples/holidays-get-workdays-example.json
-      - type: JSONLD
-        url: json-ld/holidays-context.jsonld
-    contact:
-      - FN: Holiday API
-        email: hello@holidayapi.com
-        url: https://holidayapi.com/contact
+- aid: holidays:holidays-countries-api
+  name: Holiday API Countries API
+  description: Country metadata, codes, languages, currencies, and subdivisions.
+  humanURL: https://holidayapi.com/docs
+  baseURL: https://holidayapi.com/v1
+  tags:
+  - Countries
+  properties:
+  - type: OpenAPI
+    url: openapi/holidays-countries-api-openapi.yml
+  - type: Documentation
+    url: https://holidayapi.com/docs
+  - type: JSONSchema
+    url: json-schema/holidays-holiday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-holiday-structure.json
+  - type: Examples
+    url: examples/holidays-list-holidays-example.json
+  - type: JSONLD
+    url: json-ld/holidays-context.jsonld
+  - type: JSONSchema
+    url: json-schema/holidays-country-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-country-structure.json
+  - type: Examples
+    url: examples/holidays-list-countries-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-language-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-language-structure.json
+  - type: Examples
+    url: examples/holidays-list-languages-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-workday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-workday-structure.json
+  - type: Examples
+    url: examples/holidays-get-workday-example.json
+  - type: Examples
+    url: examples/holidays-get-workdays-example.json
+- aid: holidays:holidays-holidays-api
+  name: Holiday API Holidays API
+  description: Public holidays and observances for countries, states, and provinces.
+  humanURL: https://holidayapi.com/docs
+  baseURL: https://holidayapi.com/v1
+  tags:
+  - Holidays
+  properties:
+  - type: OpenAPI
+    url: openapi/holidays-holidays-api-openapi.yml
+  - type: Documentation
+    url: https://holidayapi.com/docs
+  - type: JSONSchema
+    url: json-schema/holidays-holiday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-holiday-structure.json
+  - type: Examples
+    url: examples/holidays-list-holidays-example.json
+  - type: JSONLD
+    url: json-ld/holidays-context.jsonld
+  - type: JSONSchema
+    url: json-schema/holidays-country-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-country-structure.json
+  - type: Examples
+    url: examples/holidays-list-countries-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-language-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-language-structure.json
+  - type: Examples
+    url: examples/holidays-list-languages-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-workday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-workday-structure.json
+  - type: Examples
+    url: examples/holidays-get-workday-example.json
+  - type: Examples
+    url: examples/holidays-get-workdays-example.json
+- aid: holidays:holidays-languages-api
+  name: Holiday API Languages API
+  description: Supported languages for retrieving localized holiday names.
+  humanURL: https://holidayapi.com/docs
+  baseURL: https://holidayapi.com/v1
+  tags:
+  - Languages
+  properties:
+  - type: OpenAPI
+    url: openapi/holidays-languages-api-openapi.yml
+  - type: Documentation
+    url: https://holidayapi.com/docs
+  - type: JSONSchema
+    url: json-schema/holidays-holiday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-holiday-structure.json
+  - type: Examples
+    url: examples/holidays-list-holidays-example.json
+  - type: JSONLD
+    url: json-ld/holidays-context.jsonld
+  - type: JSONSchema
+    url: json-schema/holidays-country-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-country-structure.json
+  - type: Examples
+    url: examples/holidays-list-countries-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-language-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-language-structure.json
+  - type: Examples
+    url: examples/holidays-list-languages-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-workday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-workday-structure.json
+  - type: Examples
+    url: examples/holidays-get-workday-example.json
+  - type: Examples
+    url: examples/holidays-get-workdays-example.json
+- aid: holidays:holidays-workdays-api
+  name: Holiday API Workdays API
+  description: Working / business day calculations honoring country workweeks and holidays.
+  humanURL: https://holidayapi.com/docs
+  baseURL: https://holidayapi.com/v1
+  tags:
+  - Workdays
+  properties:
+  - type: OpenAPI
+    url: openapi/holidays-workdays-api-openapi.yml
+  - type: Documentation
+    url: https://holidayapi.com/docs
+  - type: JSONSchema
+    url: json-schema/holidays-holiday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-holiday-structure.json
+  - type: Examples
+    url: examples/holidays-list-holidays-example.json
+  - type: JSONLD
+    url: json-ld/holidays-context.jsonld
+  - type: JSONSchema
+    url: json-schema/holidays-country-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-country-structure.json
+  - type: Examples
+    url: examples/holidays-list-countries-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-language-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-language-structure.json
+  - type: Examples
+    url: examples/holidays-list-languages-example.json
+  - type: JSONSchema
+    url: json-schema/holidays-workday-schema.json
+  - type: JSONStructure
+    url: json-structure/holidays-workday-structure.json
+  - type: Examples
+    url: examples/holidays-get-workday-example.json
+  - type: Examples
+    url: examples/holidays-get-workdays-example.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/holiday-api/overview
   - type: AgenticAccess
     url: agentic-access/holidays-agentic-access.yml
   - type: DomainSecurity
