@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "c28ef86a-3966-4f57-844d-7a56fff8dcfd",
+    "name": "Holiday Countries API",
+    "description": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:56:14.000Z",
+    "updatedAt": "2026-07-28T01:56:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c28ef86a-3966-4f57-844d-7a56fff8dcfd"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "countries",
+          "item": [
+            {
+              "name": "List Countries",
+              "id": "be99530a-d461-4dc4-be5f-d8290cf73b6e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/countries?key=<uuid>&country=<string>&search=<string>&public=false&format=json&pretty=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Your API key.",
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "description": "Return only the country with the specified code.",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Search countries by code and name.",
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Return only countries that have public holidays.",
+                      "key": "public",
+                      "value": "false"
+                    },
+                    {
+                      "description": "Response format.",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Prettifies results to be more human-readable.",
+                      "key": "pretty",
+                      "value": "false"
+                    }
+                  ]
+                },
+                "description": "Retrieves a list of countries with their states and provinces."
+              },
+              "response": [
+                {
+                  "id": "c2951fc6-73aa-477f-92fa-4cdc7d728116",
+                  "name": "Success! Everything is A-OK.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/countries?key=<uuid>&country=<string>&search=<string>&public=false&format=json&pretty=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "countries"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Your API key.",
+                          "key": "key",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "Return only the country with the specified code.",
+                          "key": "country",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Search countries by code and name.",
+                          "key": "search",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Return only countries that have public holidays.",
+                          "key": "public",
+                          "value": "false"
+                        },
+                        {
+                          "description": "Response format.",
+                          "key": "format",
+                          "value": "json"
+                        },
+                        {
+                          "description": "Prettifies results to be more human-readable.",
+                          "key": "pretty",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"countries\": [\n    {\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"codes\": {\n        \"alpha-2\": \"<string>\",\n        \"alpha-3\": \"<string>\",\n        \"numeric\": \"<integer>\"\n      },\n      \"languages\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"currencies\": [\n        {\n          \"alpha\": \"<string>\"\n        },\n        {\n          \"alpha\": \"<string>\"\n        }\n      ],\n      \"flag\": \"<string>\",\n      \"subdivisions\": [\n        {\n          \"code\": \"<string>\",\n          \"name\": \"<string>\",\n          \"languages\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ]\n        },\n        {\n          \"code\": \"<string>\",\n          \"name\": \"<string>\",\n          \"languages\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ]\n        }\n      ],\n      \"weekend\": [\n        {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"codes\": {\n        \"alpha-2\": \"<string>\",\n        \"alpha-3\": \"<string>\",\n        \"numeric\": \"<integer>\"\n      },\n      \"languages\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"currencies\": [\n        {\n          \"alpha\": \"<string>\"\n        },\n        {\n          \"alpha\": \"<string>\"\n        }\n      ],\n      \"flag\": \"<string>\",\n      \"subdivisions\": [\n        {\n          \"code\": \"<string>\",\n          \"name\": \"<string>\",\n          \"languages\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ]\n        },\n        {\n          \"code\": \"<string>\",\n          \"name\": \"<string>\",\n          \"languages\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"code\": \"<string>\",\n              \"name\": \"<string>\",\n              \"languages\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ]\n        }\n      ],\n      \"weekend\": [\n        {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"requests\": {\n    \"used\": \"<integer>\",\n    \"available\": \"<integer>\",\n    \"resets\": \"<string>\"\n  },\n  \"status\": \"<integer>\",\n  \"error\": \"<string>\",\n  \"warning\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:56:15.000Z",
+                  "updatedAt": "2026-07-28T01:56:15.000Z",
+                  "uid": "35240-c2951fc6-73aa-477f-92fa-4cdc7d728116"
+                }
+              ],
+              "createdAt": "2026-07-28T01:56:15.000Z",
+              "updatedAt": "2026-07-28T01:56:15.000Z",
+              "uid": "35240-be99530a-d461-4dc4-be5f-d8290cf73b6e"
+            }
+          ],
+          "id": "3b938eac-ff2f-417f-8ddb-8db79d9d72a0",
+          "createdAt": "2026-07-28T01:56:15.000Z",
+          "updatedAt": "2026-07-28T01:56:15.000Z",
+          "uid": "35240-3b938eac-ff2f-417f-8ddb-8db79d9d72a0"
+        }
+      ],
+      "id": "f75a0e2b-ece5-4243-aed7-0e517557174b",
+      "createdAt": "2026-07-28T01:56:15.000Z",
+      "updatedAt": "2026-07-28T01:56:15.000Z",
+      "uid": "35240-f75a0e2b-ece5-4243-aed7-0e517557174b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://holidayapi.com"
+    }
+  ]
+}

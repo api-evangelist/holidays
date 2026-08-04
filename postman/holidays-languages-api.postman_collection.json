@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "0907c6dc-5c44-4e37-9697-c429c87e8463",
+    "name": "Holiday Countries Languages API",
+    "description": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:56:32.000Z",
+    "updatedAt": "2026-07-28T01:56:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0907c6dc-5c44-4e37-9697-c429c87e8463"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "languages",
+          "item": [
+            {
+              "name": "List Languages",
+              "id": "80f143ec-22dd-4efd-9482-fedfde286d43",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/languages?key=<uuid>&language=<string>&search=<string>&format=json&pretty=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "languages"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Your API key.",
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "description": "Return only the languages with the specified code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Search languages by code and name.",
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Response format.",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Prettifies results to be more human-readable.",
+                      "key": "pretty",
+                      "value": "false"
+                    }
+                  ]
+                },
+                "description": "Retrieves a list of supported languages."
+              },
+              "response": [
+                {
+                  "id": "93086bd6-37af-439d-84ba-98611d6392e7",
+                  "name": "Success! Everything is A-OK.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/languages?key=<uuid>&language=<string>&search=<string>&format=json&pretty=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "languages"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Your API key.",
+                          "key": "key",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "Return only the languages with the specified code.",
+                          "key": "language",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Search languages by code and name.",
+                          "key": "search",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Response format.",
+                          "key": "format",
+                          "value": "json"
+                        },
+                        {
+                          "description": "Prettifies results to be more human-readable.",
+                          "key": "pretty",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"requests\": {\n    \"used\": \"<integer>\",\n    \"available\": \"<integer>\",\n    \"resets\": \"<string>\"\n  },\n  \"status\": \"<integer>\",\n  \"error\": \"<string>\",\n  \"warning\": \"<string>\",\n  \"countries\": [\n    {\n      \"code\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:56:32.000Z",
+                  "updatedAt": "2026-07-28T01:56:32.000Z",
+                  "uid": "35240-93086bd6-37af-439d-84ba-98611d6392e7"
+                }
+              ],
+              "createdAt": "2026-07-28T01:56:32.000Z",
+              "updatedAt": "2026-07-28T01:56:32.000Z",
+              "uid": "35240-80f143ec-22dd-4efd-9482-fedfde286d43"
+            }
+          ],
+          "id": "72858af0-ac58-4743-be83-434a174de1c3",
+          "createdAt": "2026-07-28T01:56:32.000Z",
+          "updatedAt": "2026-07-28T01:56:32.000Z",
+          "uid": "35240-72858af0-ac58-4743-be83-434a174de1c3"
+        }
+      ],
+      "id": "8335584f-9afb-4e69-9d33-8706e366e256",
+      "createdAt": "2026-07-28T01:56:32.000Z",
+      "updatedAt": "2026-07-28T01:56:32.000Z",
+      "uid": "35240-8335584f-9afb-4e69-9d33-8706e366e256"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://holidayapi.com"
+    }
+  ]
+}

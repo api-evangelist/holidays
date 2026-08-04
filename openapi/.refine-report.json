@@ -1,0 +1,20 @@
+{
+  "provider": "holidays",
+  "sources": [
+    "holidays-countries-api-openapi.yml",
+    "holidays-holidays-api-openapi.yml",
+    "holidays-languages-api-openapi.yml",
+    "holidays-workdays-api-openapi.yml"
+  ],
+  "outputs": [
+    "holidays-countries-api-openapi.yml",
+    "holidays-holidays-api-openapi.yml",
+    "holidays-languages-api-openapi.yml",
+    "holidays-workdays-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

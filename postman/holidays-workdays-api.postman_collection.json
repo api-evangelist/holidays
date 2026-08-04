@@ -1,0 +1,315 @@
+{
+  "info": {
+    "_postman_id": "30753bba-a4d6-4299-b33c-fc46b37bdd4c",
+    "name": "Holiday Countries Workdays API",
+    "description": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:56:33.000Z",
+    "updatedAt": "2026-07-28T01:56:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-30753bba-a4d6-4299-b33c-fc46b37bdd4c"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "workday",
+          "item": [
+            {
+              "name": "Get Workday",
+              "id": "d486a654-181b-4611-b0df-db679b50fcf5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/workday?key=<uuid>&country=<string>&start=<date>&days=<integer>&format=json&pretty=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "workday"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Your API key.",
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting.",
+                      "key": "start",
+                      "value": "<date>"
+                    },
+                    {
+                      "description": "(Required) Number of working / business days to advance (positive integer) or retrogress (negative integer) from start.",
+                      "key": "days",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Response format.",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Prettifies results to be more human-readable.",
+                      "key": "pretty",
+                      "value": "false"
+                    }
+                  ]
+                },
+                "description": "Calculates the workday (based on a country's workweek) that occurs a given number of days after a date."
+              },
+              "response": [
+                {
+                  "id": "1421baba-0675-4e19-afcb-668c4a461443",
+                  "name": "Success! Everything is A-OK.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/workday?key=<uuid>&country=<string>&start=<date>&days=<integer>&format=json&pretty=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "workday"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Your API key.",
+                          "key": "key",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                          "key": "country",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting.",
+                          "key": "start",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "(Required) Number of working / business days to advance (positive integer) or retrogress (negative integer) from start.",
+                          "key": "days",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Response format.",
+                          "key": "format",
+                          "value": "json"
+                        },
+                        {
+                          "description": "Prettifies results to be more human-readable.",
+                          "key": "pretty",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"date\": \"<date>\",\n  \"requests\": {\n    \"used\": \"<integer>\",\n    \"available\": \"<integer>\",\n    \"resets\": \"<string>\"\n  },\n  \"status\": \"<integer>\",\n  \"weekday\": {\n    \"date\": {\n      \"name\": \"<string>\",\n      \"numeric\": \"<string>\"\n    },\n    \"observed\": {\n      \"name\": \"<string>\",\n      \"numeric\": \"<integer>\"\n    }\n  },\n  \"error\": \"<string>\",\n  \"warning\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:56:33.000Z",
+                  "updatedAt": "2026-07-28T01:56:33.000Z",
+                  "uid": "35240-1421baba-0675-4e19-afcb-668c4a461443"
+                }
+              ],
+              "createdAt": "2026-07-28T01:56:33.000Z",
+              "updatedAt": "2026-07-28T01:56:33.000Z",
+              "uid": "35240-d486a654-181b-4611-b0df-db679b50fcf5"
+            }
+          ],
+          "id": "9f96a5fb-35db-43a2-bad5-db9a2c41abca",
+          "createdAt": "2026-07-28T01:56:33.000Z",
+          "updatedAt": "2026-07-28T01:56:33.000Z",
+          "uid": "35240-9f96a5fb-35db-43a2-bad5-db9a2c41abca"
+        },
+        {
+          "name": "workdays",
+          "item": [
+            {
+              "name": "Get Workdays",
+              "id": "57e95f15-d6cc-4a4a-b12b-f7c2fac35d0e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/workdays?key=<uuid>&country=<string>&start=<date>&end=<date>&format=json&pretty=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "workdays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Your API key.",
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting.",
+                      "key": "start",
+                      "value": "<date>"
+                    },
+                    {
+                      "description": "(Required) The date (in YYYY-MM-DD format) to count until.",
+                      "key": "end",
+                      "value": "<date>"
+                    },
+                    {
+                      "description": "Response format.",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Prettifies results to be more human-readable.",
+                      "key": "pretty",
+                      "value": "false"
+                    }
+                  ]
+                },
+                "description": "Calculates the number of workdays (based on a country's workweek) that occur between a given date range."
+              },
+              "response": [
+                {
+                  "id": "85c4aab3-4f11-4d7f-b7e5-ae68a17296e2",
+                  "name": "Success! Everything is A-OK.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/workdays?key=<uuid>&country=<string>&start=<date>&end=<date>&format=json&pretty=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "workdays"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Your API key.",
+                          "key": "key",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                          "key": "country",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting.",
+                          "key": "start",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "(Required) The date (in YYYY-MM-DD format) to count until.",
+                          "key": "end",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "Response format.",
+                          "key": "format",
+                          "value": "json"
+                        },
+                        {
+                          "description": "Prettifies results to be more human-readable.",
+                          "key": "pretty",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"requests\": {\n    \"used\": \"<integer>\",\n    \"available\": \"<integer>\",\n    \"resets\": \"<string>\"\n  },\n  \"status\": \"<integer>\",\n  \"error\": \"<string>\",\n  \"warning\": \"<string>\",\n  \"date\": \"<integer>\"\n}",
+                  "createdAt": "2026-07-28T01:56:33.000Z",
+                  "updatedAt": "2026-07-28T01:56:33.000Z",
+                  "uid": "35240-85c4aab3-4f11-4d7f-b7e5-ae68a17296e2"
+                }
+              ],
+              "createdAt": "2026-07-28T01:56:33.000Z",
+              "updatedAt": "2026-07-28T01:56:33.000Z",
+              "uid": "35240-57e95f15-d6cc-4a4a-b12b-f7c2fac35d0e"
+            }
+          ],
+          "id": "760da545-4da9-44ed-ba01-74a32ecda4dd",
+          "createdAt": "2026-07-28T01:56:33.000Z",
+          "updatedAt": "2026-07-28T01:56:33.000Z",
+          "uid": "35240-760da545-4da9-44ed-ba01-74a32ecda4dd"
+        }
+      ],
+      "id": "4c70d3cb-e8ee-4e74-893f-7cb293dc3d2b",
+      "createdAt": "2026-07-28T01:56:33.000Z",
+      "updatedAt": "2026-07-28T01:56:33.000Z",
+      "uid": "35240-4c70d3cb-e8ee-4e74-893f-7cb293dc3d2b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://holidayapi.com"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "info": {
+    "_postman_id": "458cc286-8da9-4105-b377-125033f058d4",
+    "name": "Holiday Countries Holidays API",
+    "description": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:56:15.000Z",
+    "updatedAt": "2026-07-28T01:56:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-458cc286-8da9-4105-b377-125033f058d4"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "holidays",
+          "item": [
+            {
+              "name": "List Holidays",
+              "id": "401163f2-77e5-4822-b34b-69d28cd1d29a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/holidays?key=<uuid>&country=<string>&year=<integer>&month=<integer>&day=<integer>&public=false&subdivisions=false&search=<string>&language=<string>&previous=<boolean>&upcoming=<boolean>&format=json&pretty=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Your API key.",
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ISO 8601 format",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "1 or 2 digit month (1-12)",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "1 or 2 digit day (1-31 depending on the month). Must be used with month.",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Return only public holidays.",
+                      "key": "public",
+                      "value": "false"
+                    },
+                    {
+                      "description": "Return state / province holidays alongside countrywide holidays. Available on our States & Provinces plan.",
+                      "key": "subdivisions",
+                      "value": "false"
+                    },
+                    {
+                      "description": "Search holidays by name.",
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "ISO 639-1 format (with exceptions).",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Return the first day of holidays that occur before the specific date. month and day are required. Cannot be used with upcoming.",
+                      "key": "previous",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "Return the first day of holidays that occur after the specific date. month and day are required. Cannot be used with previous.",
+                      "key": "upcoming",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "Response format.",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Prettifies results to be more human-readable.",
+                      "key": "pretty",
+                      "value": "false"
+                    }
+                  ]
+                },
+                "description": "Retrieves a list of public holidays and observances for countries, states and provinces."
+              },
+              "response": [
+                {
+                  "id": "be97ed97-479d-431e-b30b-3967d5d919d3",
+                  "name": "Success! Everything is A-OK.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/holidays?key=<uuid>&country=<string>&year=<integer>&month=<integer>&day=<integer>&public=false&subdivisions=false&search=<string>&language=<string>&previous=<boolean>&upcoming=<boolean>&format=json&pretty=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "holidays"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Your API key.",
+                          "key": "key",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values.",
+                          "key": "country",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ISO 8601 format",
+                          "key": "year",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "1 or 2 digit month (1-12)",
+                          "key": "month",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "1 or 2 digit day (1-31 depending on the month). Must be used with month.",
+                          "key": "day",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Return only public holidays.",
+                          "key": "public",
+                          "value": "false"
+                        },
+                        {
+                          "description": "Return state / province holidays alongside countrywide holidays. Available on our States & Provinces plan.",
+                          "key": "subdivisions",
+                          "value": "false"
+                        },
+                        {
+                          "description": "Search holidays by name.",
+                          "key": "search",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "ISO 639-1 format (with exceptions).",
+                          "key": "language",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Return the first day of holidays that occur before the specific date. month and day are required. Cannot be used with upcoming.",
+                          "key": "previous",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "Return the first day of holidays that occur after the specific date. month and day are required. Cannot be used with previous.",
+                          "key": "upcoming",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "Response format.",
+                          "key": "format",
+                          "value": "json"
+                        },
+                        {
+                          "description": "Prettifies results to be more human-readable.",
+                          "key": "pretty",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"holidays\": [\n    {\n      \"name\": \"<string>\",\n      \"date\": \"<date>\",\n      \"observed\": \"<date>\",\n      \"public\": \"<boolean>\",\n      \"country\": \"<string>\",\n      \"uuid\": \"<uuid>\",\n      \"weekday\": {\n        \"date\": {\n          \"name\": \"<string>\",\n          \"numeric\": \"<string>\"\n        },\n        \"observed\": {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        }\n      },\n      \"subdivisions\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"date\": \"<date>\",\n      \"observed\": \"<date>\",\n      \"public\": \"<boolean>\",\n      \"country\": \"<string>\",\n      \"uuid\": \"<uuid>\",\n      \"weekday\": {\n        \"date\": {\n          \"name\": \"<string>\",\n          \"numeric\": \"<string>\"\n        },\n        \"observed\": {\n          \"name\": \"<string>\",\n          \"numeric\": \"<integer>\"\n        }\n      },\n      \"subdivisions\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"requests\": {\n    \"used\": \"<integer>\",\n    \"available\": \"<integer>\",\n    \"resets\": \"<string>\"\n  },\n  \"status\": \"<integer>\",\n  \"error\": \"<string>\",\n  \"warning\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:56:15.000Z",
+                  "updatedAt": "2026-07-28T01:56:15.000Z",
+                  "uid": "35240-be97ed97-479d-431e-b30b-3967d5d919d3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:56:15.000Z",
+              "updatedAt": "2026-07-28T01:56:15.000Z",
+              "uid": "35240-401163f2-77e5-4822-b34b-69d28cd1d29a"
+            }
+          ],
+          "id": "65501ac1-d90c-4792-b77a-83ea831ee1ab",
+          "createdAt": "2026-07-28T01:56:15.000Z",
+          "updatedAt": "2026-07-28T01:56:15.000Z",
+          "uid": "35240-65501ac1-d90c-4792-b77a-83ea831ee1ab"
+        }
+      ],
+      "id": "8bb502b2-13d6-4269-9815-a7dc00159313",
+      "createdAt": "2026-07-28T01:56:15.000Z",
+      "updatedAt": "2026-07-28T01:56:15.000Z",
+      "uid": "35240-8bb502b2-13d6-4269-9815-a7dc00159313"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://holidayapi.com"
+    }
+  ]
+}
