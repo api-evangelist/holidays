@@ -212,7 +212,7 @@ common:
   - type: Documentation
     url: https://holidayapi.com/docs
   - type: OpenAPI
-    url: openapi/holidays-api-openapi.yml
+    url: openapi/_original/holidays-api-openapi.yml
   - type: JSONSchema
     url: json-schema/holidays-response-schema.json
   - type: JSONStructure
