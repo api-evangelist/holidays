@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Holiday Countries API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://holidayapi.com/v1/countries",
+            "params": [
+              {
+                "name": "key",
+                "value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Return only the country with the specified code."
+              },
+              {
+                "name": "search",
+                "value": "United",
+                "type": "query",
+                "description": "Search countries by code and name."
+              },
+              {
+                "name": "public",
+                "value": "true",
+                "type": "query",
+                "description": "Return only countries that have public holidays."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "pretty",
+                "value": "true",
+                "type": "query",
+                "description": "Prettifies results to be more human-readable."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of countries with their states and provinces."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

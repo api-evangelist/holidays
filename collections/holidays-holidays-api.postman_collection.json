@@ -1,0 +1,236 @@
+{
+  "item": [
+    {
+      "id": "10ee95fa-162b-4035-b870-66b8614cc9ed",
+      "name": "Holidays",
+      "description": {
+        "content": "Public holidays and observances for countries, states, and provinces.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ce8fd78b-ca77-440c-a762-139650fd2f56",
+          "name": "List Holidays",
+          "request": {
+            "name": "List Holidays",
+            "description": {
+              "content": "Retrieves a list of public holidays and observances for countries, states and provinces.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "holidays"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<uuid>",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "(Required) ISO 8601 format"
+                },
+                {
+                  "disabled": false,
+                  "key": "month",
+                  "value": "<integer>",
+                  "description": "1 or 2 digit month (1-12)"
+                },
+                {
+                  "disabled": false,
+                  "key": "day",
+                  "value": "<integer>",
+                  "description": "1 or 2 digit day (1-31 depending on the month). Must be used with month."
+                },
+                {
+                  "disabled": false,
+                  "key": "public",
+                  "value": "false",
+                  "description": "Return only public holidays."
+                },
+                {
+                  "disabled": false,
+                  "key": "subdivisions",
+                  "value": "false",
+                  "description": "Return state / province holidays alongside countrywide holidays. Available on our States & Provinces plan."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search holidays by name."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 format (with exceptions)."
+                },
+                {
+                  "disabled": false,
+                  "key": "previous",
+                  "value": "<boolean>",
+                  "description": "Return the first day of holidays that occur before the specific date. month and day are required. Cannot be used with upcoming."
+                },
+                {
+                  "disabled": false,
+                  "key": "upcoming",
+                  "value": "<boolean>",
+                  "description": "Return the first day of holidays that occur after the specific date. month and day are required. Cannot be used with previous."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "false",
+                  "description": "Prettifies results to be more human-readable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5caba04-05c3-4f84-bde3-b85f90200acc",
+              "name": "Success! Everything is A-OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "year",
+                      "value": "2015"
+                    },
+                    {
+                      "key": "month",
+                      "value": "7"
+                    },
+                    {
+                      "key": "day",
+                      "value": "4"
+                    },
+                    {
+                      "key": "public",
+                      "value": "true"
+                    },
+                    {
+                      "key": "subdivisions",
+                      "value": "true"
+                    },
+                    {
+                      "key": "search",
+                      "value": "Independence Day"
+                    },
+                    {
+                      "key": "language",
+                      "value": "en"
+                    },
+                    {
+                      "key": "previous",
+                      "value": "true"
+                    },
+                    {
+                      "key": "upcoming",
+                      "value": "true"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"holidays\": [\n    {\n      \"name\": \"Independence Day\",\n      \"date\": \"2015-07-04\",\n      \"observed\": \"2015-07-03\",\n      \"public\": true,\n      \"country\": \"US\",\n      \"uuid\": \"841f13e0-9531-eab2-f55e-48fa2551866a\",\n      \"weekday\": {\n        \"date\": {\n          \"name\": \"Saturday\",\n          \"numeric\": \"6\"\n        },\n        \"observed\": {\n          \"name\": \"Friday\",\n          \"numeric\": 5\n        }\n      },\n      \"subdivisions\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"Independence Day\",\n      \"date\": \"2015-07-04\",\n      \"observed\": \"2015-07-03\",\n      \"public\": true,\n      \"country\": \"US\",\n      \"uuid\": \"7da82410-adcd-e9b9-8246-14dc6a6c584d\",\n      \"weekday\": {\n        \"date\": {\n          \"name\": \"Saturday\",\n          \"numeric\": \"6\"\n        },\n        \"observed\": {\n          \"name\": \"Friday\",\n          \"numeric\": 5\n        }\n      },\n      \"subdivisions\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"requests\": {\n    \"used\": 136,\n    \"available\": 864,\n    \"resets\": \"2019-09-01 00:00:00\"\n  },\n  \"status\": 200,\n  \"error\": \"An error has occurred.\",\n  \"warning\": \"An warning has occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://holidayapi.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "93379bde-1373-4c7d-aa08-442ed644558d",
+    "name": "Holiday Countries Holidays API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+      "type": "text/plain"
+    }
+  }
+}

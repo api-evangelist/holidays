@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Holiday Countries Workdays API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workdays",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Workday",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://holidayapi.com/v1/workday",
+            "params": [
+              {
+                "name": "key",
+                "value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+              },
+              {
+                "name": "start",
+                "value": "2015-07-01",
+                "type": "query",
+                "description": "The date (in YYYY-MM-DD format) from which to begin counting."
+              },
+              {
+                "name": "days",
+                "value": "7",
+                "type": "query",
+                "description": "Number of working / business days to advance (positive integer) or retrogress (negative integer) from start."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "pretty",
+                "value": "true",
+                "type": "query",
+                "description": "Prettifies results to be more human-readable."
+              }
+            ]
+          },
+          "docs": "Calculates the workday (based on a country's workweek) that occurs a given number of days after a date."
+        },
+        {
+          "info": {
+            "name": "Get Workdays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://holidayapi.com/v1/workdays",
+            "params": [
+              {
+                "name": "key",
+                "value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+              },
+              {
+                "name": "start",
+                "value": "2015-07-01",
+                "type": "query",
+                "description": "The date (in YYYY-MM-DD format) from which to begin counting."
+              },
+              {
+                "name": "end",
+                "value": "2015-07-10",
+                "type": "query",
+                "description": "The date (in YYYY-MM-DD format) to count until."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "pretty",
+                "value": "true",
+                "type": "query",
+                "description": "Prettifies results to be more human-readable."
+              }
+            ]
+          },
+          "docs": "Calculates the number of workdays (based on a country's workweek) that occur between a given date range."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

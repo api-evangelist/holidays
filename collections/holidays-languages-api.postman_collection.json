@@ -1,0 +1,156 @@
+{
+  "item": [
+    {
+      "id": "1e0fe817-0eaa-4ff3-9927-80d3352f6034",
+      "name": "Languages",
+      "description": {
+        "content": "Supported languages for retrieving localized holiday names.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d41589a0-c0f9-48b4-a205-73365df6341b",
+          "name": "List Languages",
+          "request": {
+            "name": "List Languages",
+            "description": {
+              "content": "Retrieves a list of supported languages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "languages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<uuid>",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Return only the languages with the specified code."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search languages by code and name."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "false",
+                  "description": "Prettifies results to be more human-readable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e8234f7-a36d-4a31-8744-5596d27342a5",
+              "name": "Success! Everything is A-OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "US"
+                    },
+                    {
+                      "key": "search",
+                      "value": "United"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requests\": {\n    \"used\": 136,\n    \"available\": 864,\n    \"resets\": \"2019-09-01 00:00:00\"\n  },\n  \"status\": 200,\n  \"error\": \"An error has occurred.\",\n  \"warning\": \"An warning has occurred.\",\n  \"countries\": [\n    {\n      \"code\": \"en\",\n      \"name\": \"English\"\n    },\n    {\n      \"code\": \"en\",\n      \"name\": \"English\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://holidayapi.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6de1fa66-4a36-45b8-aa9d-01b19968a922",
+    "name": "Holiday Countries Languages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+      "type": "text/plain"
+    }
+  }
+}

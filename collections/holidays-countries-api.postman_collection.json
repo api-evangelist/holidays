@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "0deb31e8-5fa6-40e3-a1de-1812dd937cad",
+      "name": "Countries",
+      "description": {
+        "content": "Country metadata, codes, languages, currencies, and subdivisions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5dfca0f6-d5d2-4cb0-aa20-19a03821f7cc",
+          "name": "List Countries",
+          "request": {
+            "name": "List Countries",
+            "description": {
+              "content": "Retrieves a list of countries with their states and provinces.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<uuid>",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Return only the country with the specified code."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search countries by code and name."
+                },
+                {
+                  "disabled": false,
+                  "key": "public",
+                  "value": "false",
+                  "description": "Return only countries that have public holidays."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "false",
+                  "description": "Prettifies results to be more human-readable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "917f4166-048c-45c9-9e14-331cc774ef5a",
+              "name": "Success! Everything is A-OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "search",
+                      "value": "United"
+                    },
+                    {
+                      "key": "public",
+                      "value": "true"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"countries\": [\n    {\n      \"code\": \"US\",\n      \"name\": \"United States of America\",\n      \"codes\": {\n        \"alpha-2\": \"US\",\n        \"alpha-3\": \"USA\",\n        \"numeric\": 840\n      },\n      \"languages\": [\n        \"en\",\n        \"en\"\n      ],\n      \"currencies\": [\n        {\n          \"alpha\": \"USD\"\n        },\n        {\n          \"alpha\": \"USD\"\n        }\n      ],\n      \"flag\": \"https://holidayapi.com/images/flags/64/us.png\",\n      \"subdivisions\": [\n        {\n          \"code\": \"US-TX\",\n          \"name\": \"Texas\",\n          \"languages\": [\n            \"string\",\n            \"string\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"code\": \"US-TX\",\n          \"name\": \"Texas\",\n          \"languages\": [\n            \"string\",\n            \"string\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          ]\n        }\n      ],\n      \"weekend\": [\n        {\n          \"name\": \"Sunday\",\n          \"numeric\": 7\n        },\n        {\n          \"name\": \"Sunday\",\n          \"numeric\": 7\n        }\n      ]\n    },\n    {\n      \"code\": \"US\",\n      \"name\": \"United States of America\",\n      \"codes\": {\n        \"alpha-2\": \"US\",\n        \"alpha-3\": \"USA\",\n        \"numeric\": 840\n      },\n      \"languages\": [\n        \"en\",\n        \"en\"\n      ],\n      \"currencies\": [\n        {\n          \"alpha\": \"USD\"\n        },\n        {\n          \"alpha\": \"USD\"\n        }\n      ],\n      \"flag\": \"https://holidayapi.com/images/flags/64/us.png\",\n      \"subdivisions\": [\n        {\n          \"code\": \"US-TX\",\n          \"name\": \"Texas\",\n          \"languages\": [\n            \"string\",\n            \"string\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"code\": \"US-TX\",\n          \"name\": \"Texas\",\n          \"languages\": [\n            \"string\",\n            \"string\"\n          ],\n          \"subdivisions\": [\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            {\n              \"code\": \"US-TX\",\n              \"name\": \"Texas\",\n              \"languages\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          ]\n        }\n      ],\n      \"weekend\": [\n        {\n          \"name\": \"Sunday\",\n          \"numeric\": 7\n        },\n        {\n          \"name\": \"Sunday\",\n          \"numeric\": 7\n        }\n      ]\n    }\n  ],\n  \"requests\": {\n    \"used\": 136,\n    \"available\": 864,\n    \"resets\": \"2019-09-01 00:00:00\"\n  },\n  \"status\": 200,\n  \"error\": \"An error has occurred.\",\n  \"warning\": \"An warning has occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://holidayapi.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e25307de-8a46-4d19-b92a-541873ad7395",
+    "name": "Holiday Countries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+      "type": "text/plain"
+    }
+  }
+}

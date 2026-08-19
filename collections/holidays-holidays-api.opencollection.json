@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Holiday Countries Holidays API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Holidays",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Holidays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://holidayapi.com/v1/holidays",
+            "params": [
+              {
+                "name": "key",
+                "value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+              },
+              {
+                "name": "year",
+                "value": "2015",
+                "type": "query",
+                "description": "ISO 8601 format"
+              },
+              {
+                "name": "month",
+                "value": "7",
+                "type": "query",
+                "description": "1 or 2 digit month (1-12)"
+              },
+              {
+                "name": "day",
+                "value": "4",
+                "type": "query",
+                "description": "1 or 2 digit day (1-31 depending on the month). Must be used with month."
+              },
+              {
+                "name": "public",
+                "value": "true",
+                "type": "query",
+                "description": "Return only public holidays."
+              },
+              {
+                "name": "subdivisions",
+                "value": "true",
+                "type": "query",
+                "description": "Return state / province holidays alongside countrywide holidays. Available on our States & Provinces plan."
+              },
+              {
+                "name": "search",
+                "value": "Independence Day",
+                "type": "query",
+                "description": "Search holidays by name."
+              },
+              {
+                "name": "language",
+                "value": "en",
+                "type": "query",
+                "description": "ISO 639-1 format (with exceptions)."
+              },
+              {
+                "name": "previous",
+                "value": "true",
+                "type": "query",
+                "description": "Return the first day of holidays that occur before the specific date. month and day are required. Cannot be used with upcoming."
+              },
+              {
+                "name": "upcoming",
+                "value": "true",
+                "type": "query",
+                "description": "Return the first day of holidays that occur after the specific date. month and day are required. Cannot be used with previous."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "pretty",
+                "value": "true",
+                "type": "query",
+                "description": "Prettifies results to be more human-readable."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of public holidays and observances for countries, states and provinces."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

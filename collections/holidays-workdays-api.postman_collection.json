@@ -1,0 +1,300 @@
+{
+  "item": [
+    {
+      "id": "65c35c1d-fbea-4b2f-9ef8-1aa772d24be5",
+      "name": "Workdays",
+      "description": {
+        "content": "Working / business day calculations honoring country workweeks and holidays.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea5e720c-026b-42db-b3f0-b93329113610",
+          "name": "Get Workday",
+          "request": {
+            "name": "Get Workday",
+            "description": {
+              "content": "Calculates the workday (based on a country's workweek) that occurs a given number of days after a date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workday"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<uuid>",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<date>",
+                  "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting."
+                },
+                {
+                  "disabled": false,
+                  "key": "days",
+                  "value": "<integer>",
+                  "description": "(Required) Number of working / business days to advance (positive integer) or retrogress (negative integer) from start."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "false",
+                  "description": "Prettifies results to be more human-readable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d5d5775-1475-40bf-9f21-19e80221ef81",
+              "name": "Success! Everything is A-OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workday"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "start",
+                      "value": "2015-07-01"
+                    },
+                    {
+                      "key": "days",
+                      "value": "7"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"date\": \"2015-07-13\",\n  \"requests\": {\n    \"used\": 136,\n    \"available\": 864,\n    \"resets\": \"2019-09-01 00:00:00\"\n  },\n  \"status\": 200,\n  \"weekday\": {\n    \"date\": {\n      \"name\": \"Saturday\",\n      \"numeric\": \"6\"\n    },\n    \"observed\": {\n      \"name\": \"Friday\",\n      \"numeric\": 5\n    }\n  },\n  \"error\": \"An error has occurred.\",\n  \"warning\": \"An warning has occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "caaab6ae-b620-4748-9a87-3a923de3856b",
+          "name": "Get Workdays",
+          "request": {
+            "name": "Get Workdays",
+            "description": {
+              "content": "Calculates the number of workdays (based on a country's workweek) that occur between a given date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workdays"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<uuid>",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "(Required) For countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For subdivisions, ISO 3166-2 format. Accepts up to 10 comma separated values."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<date>",
+                  "description": "(Required) The date (in YYYY-MM-DD format) from which to begin counting."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<date>",
+                  "description": "(Required) The date (in YYYY-MM-DD format) to count until."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "false",
+                  "description": "Prettifies results to be more human-readable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d47eea4-97a5-4cb9-b514-00f4c140677e",
+              "name": "Success! Everything is A-OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workdays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "start",
+                      "value": "2015-07-01"
+                    },
+                    {
+                      "key": "end",
+                      "value": "2015-07-10"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requests\": {\n    \"used\": 136,\n    \"available\": 864,\n    \"resets\": \"2019-09-01 00:00:00\"\n  },\n  \"status\": 200,\n  \"error\": \"An error has occurred.\",\n  \"warning\": \"An warning has occurred.\",\n  \"date\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://holidayapi.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b4c114b8-de3c-4a80-8760-cbca8784849e",
+    "name": "Holiday Countries Workdays API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Holidays are hard. We make them easy.\n\nContact Support:\n Name: Holiday API\n Email: hello@holidayapi.com",
+      "type": "text/plain"
+    }
+  }
+}

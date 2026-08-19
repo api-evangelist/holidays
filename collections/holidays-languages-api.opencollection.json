@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Holiday Countries Languages API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://holidayapi.com/v1/languages",
+            "params": [
+              {
+                "name": "key",
+                "value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "language",
+                "value": "US",
+                "type": "query",
+                "description": "Return only the languages with the specified code."
+              },
+              {
+                "name": "search",
+                "value": "United",
+                "type": "query",
+                "description": "Search languages by code and name."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format."
+              },
+              {
+                "name": "pretty",
+                "value": "true",
+                "type": "query",
+                "description": "Prettifies results to be more human-readable."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of supported languages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
