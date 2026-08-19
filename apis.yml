@@ -19,7 +19,7 @@ accessModel:
   method: derived
 image: https://holidayapi.com/images/calendar.svg
 url: https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-05-28'
 modified: '2026-05-29'
 x-source: public-apis/public-apis
