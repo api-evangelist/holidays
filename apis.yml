@@ -33,6 +33,17 @@ tags:
   - Observances
   - Reference Data
   - Countries
+  - Language
+  - Workdays
+  - Business Days
+  - Localization
+tags_raw:
+  - Calendar
+  - Holidays
+  - Public Holidays
+  - Observances
+  - Reference Data
+  - Countries
   - Languages
   - Workdays
   - Business Days
@@ -124,6 +135,8 @@ apis:
   humanURL: https://holidayapi.com/docs
   baseURL: https://holidayapi.com/v1
   tags:
+  - Language
+  tags_raw:
   - Languages
   properties:
   - type: OpenAPI
