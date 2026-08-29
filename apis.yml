@@ -5,6 +5,18 @@ description: >-
   language metadata, and workday calculations for 250 countries and 3,680+ state/province subdivisions in 100+
   languages. Operated by Gravity Boulevard, LLC, it exposes five JSON endpoints under https://holidayapi.com/v1/ with
   official client libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
