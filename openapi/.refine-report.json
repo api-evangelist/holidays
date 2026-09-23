@@ -1,10 +1,7 @@
 {
   "provider": "holidays",
   "sources": [
-    "holidays-countries-api-openapi.yml",
-    "holidays-holidays-api-openapi.yml",
-    "holidays-languages-api-openapi.yml",
-    "holidays-workdays-api-openapi.yml"
+    "_original/holidays-api-openapi.yml"
   ],
   "outputs": [
     "holidays-countries-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "holidays-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "holidays-countries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "holidays-holidays-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "holidays-languages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "holidays-workdays-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

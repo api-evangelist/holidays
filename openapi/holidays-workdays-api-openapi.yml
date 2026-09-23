@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Holiday Countries Workdays API
+  title: Holiday Workdays API
   description: Holidays are hard. We make them easy.
   termsOfService: https://holidayapi.com/terms
   contact:
@@ -160,31 +160,6 @@ paths:
                 $ref: '#/components/schemas/workdays'
 components:
   schemas:
-    workdays:
-      allOf:
-      - $ref: '#/components/schemas/response'
-      - type: object
-        required:
-        - workdays
-        properties:
-          date:
-            type: integer
-            format: int32
-            example: 10
-    workday:
-      allOf:
-      - $ref: '#/components/schemas/response'
-      - type: object
-        required:
-        - date
-        - weekday
-        properties:
-          date:
-            type: string
-            format: date
-            example: '2015-07-13'
-          weekday:
-            $ref: '#/components/schemas/weekday'
     response:
       type: object
       required:
@@ -219,6 +194,17 @@ components:
         warning:
           type: string
           example: An warning has occurred.
+    workdays:
+      allOf:
+      - $ref: '#/components/schemas/response'
+      - type: object
+        required:
+        - workdays
+        properties:
+          date:
+            type: integer
+            format: int32
+            example: 10
     weekday:
       type: object
       required:
@@ -250,3 +236,17 @@ components:
               type: integer
               format: int32
               example: 5
+    workday:
+      allOf:
+      - $ref: '#/components/schemas/response'
+      - type: object
+        required:
+        - date
+        - weekday
+        properties:
+          date:
+            type: string
+            format: date
+            example: '2015-07-13'
+          weekday:
+            $ref: '#/components/schemas/weekday'

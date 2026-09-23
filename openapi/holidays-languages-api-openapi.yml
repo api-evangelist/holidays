@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Holiday Countries Languages API
+  title: Holiday Languages API
   description: Holidays are hard. We make them easy.
   termsOfService: https://holidayapi.com/terms
   contact:
@@ -80,17 +80,6 @@ paths:
                 $ref: '#/components/schemas/languages'
 components:
   schemas:
-    languages:
-      allOf:
-      - $ref: '#/components/schemas/response'
-      - type: object
-        required:
-        - languages
-        properties:
-          countries:
-            type: array
-            items:
-              $ref: '#/components/schemas/language'
     response:
       type: object
       required:
@@ -125,6 +114,17 @@ components:
         warning:
           type: string
           example: An warning has occurred.
+    languages:
+      allOf:
+      - $ref: '#/components/schemas/response'
+      - type: object
+        required:
+        - languages
+        properties:
+          countries:
+            type: array
+            items:
+              $ref: '#/components/schemas/language'
     language:
       type: object
       required:
