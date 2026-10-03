@@ -88,6 +88,40 @@ paths:
                 $ref: '#/components/schemas/countries'
 components:
   schemas:
+    response:
+      type: object
+      required:
+      - status
+      - requests
+      properties:
+        status:
+          type: integer
+          format: int32
+          example: 200
+        requests:
+          type: object
+          required:
+          - used
+          - available
+          - resets
+          properties:
+            used:
+              type: integer
+              format: int32
+              example: 136
+            available:
+              type: integer
+              format: int32
+              example: 864
+            resets:
+              type: string
+              example: '2019-09-01 00:00:00'
+        error:
+          type: string
+          example: An error has occurred.
+        warning:
+          type: string
+          example: An warning has occurred.
     country:
       type: object
       required:
@@ -220,37 +254,3 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/country'
-    response:
-      type: object
-      required:
-      - status
-      - requests
-      properties:
-        status:
-          type: integer
-          format: int32
-          example: 200
-        requests:
-          type: object
-          required:
-          - used
-          - available
-          - resets
-          properties:
-            used:
-              type: integer
-              format: int32
-              example: 136
-            available:
-              type: integer
-              format: int32
-              example: 864
-            resets:
-              type: string
-              example: '2019-09-01 00:00:00'
-        error:
-          type: string
-          example: An error has occurred.
-        warning:
-          type: string
-          example: An warning has occurred.
