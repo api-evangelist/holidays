@@ -80,6 +80,18 @@ paths:
                 $ref: '#/components/schemas/languages'
 components:
   schemas:
+    language:
+      type: object
+      required:
+      - code
+      - name
+      properties:
+        code:
+          type: string
+          example: en
+        name:
+          type: string
+          example: English
     languages:
       allOf:
       - $ref: '#/components/schemas/response'
@@ -125,15 +137,3 @@ components:
         warning:
           type: string
           example: An warning has occurred.
-    language:
-      type: object
-      required:
-      - code
-      - name
-      properties:
-        code:
-          type: string
-          example: en
-        name:
-          type: string
-          example: English

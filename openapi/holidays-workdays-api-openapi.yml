@@ -160,6 +160,51 @@ paths:
                 $ref: '#/components/schemas/workdays'
 components:
   schemas:
+    weekday:
+      type: object
+      required:
+      - date
+      - observed
+      properties:
+        date:
+          type: object
+          required:
+          - name
+          - numeric
+          properties:
+            name:
+              type: string
+              example: Saturday
+            numeric:
+              type: string
+              example: '6'
+        observed:
+          type: object
+          required:
+          - name
+          - numeric
+          properties:
+            name:
+              type: string
+              example: Friday
+            numeric:
+              type: integer
+              format: int32
+              example: 5
+    workday:
+      allOf:
+      - $ref: '#/components/schemas/response'
+      - type: object
+        required:
+        - date
+        - weekday
+        properties:
+          date:
+            type: string
+            format: date
+            example: '2015-07-13'
+          weekday:
+            $ref: '#/components/schemas/weekday'
     response:
       type: object
       required:
@@ -194,37 +239,6 @@ components:
         warning:
           type: string
           example: An warning has occurred.
-    weekday:
-      type: object
-      required:
-      - date
-      - observed
-      properties:
-        date:
-          type: object
-          required:
-          - name
-          - numeric
-          properties:
-            name:
-              type: string
-              example: Saturday
-            numeric:
-              type: string
-              example: '6'
-        observed:
-          type: object
-          required:
-          - name
-          - numeric
-          properties:
-            name:
-              type: string
-              example: Friday
-            numeric:
-              type: integer
-              format: int32
-              example: 5
     workdays:
       allOf:
       - $ref: '#/components/schemas/response'
@@ -236,17 +250,3 @@ components:
             type: integer
             format: int32
             example: 10
-    workday:
-      allOf:
-      - $ref: '#/components/schemas/response'
-      - type: object
-        required:
-        - date
-        - weekday
-        properties:
-          date:
-            type: string
-            format: date
-            example: '2015-07-13'
-          weekday:
-            $ref: '#/components/schemas/weekday'
