@@ -1,0 +1,12 @@
+{
+ "url": "https://holidayapi.com/holidayapi-v1-openapi.yaml",
+ "requested_url": "https://holidayapi.com/holidayapi-v1-openapi.yaml",
+ "status": 200,
+ "content_type": "application/octet-stream",
+ "bytes": 19759,
+ "sha256": "acbb4bf4755227b4e61ceba29831b1277d533b0e92884f68131eceeaa52951c4",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
