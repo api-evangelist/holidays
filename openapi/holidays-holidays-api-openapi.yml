@@ -141,78 +141,6 @@ paths:
                 $ref: '#/components/schemas/holidays'
 components:
   schemas:
-    holiday:
-      type: object
-      required:
-      - name
-      - date
-      - observed
-      - public
-      - country
-      - uuid
-      - weekday
-      properties:
-        name:
-          type: string
-          example: Independence Day
-        date:
-          type: string
-          format: date
-          example: '2015-07-04'
-        observed:
-          type: string
-          format: date
-          example: '2015-07-03'
-        public:
-          type: boolean
-          example: true
-        country:
-          type: string
-          example: US
-        uuid:
-          type: string
-          format: uuid
-          example: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-        weekday:
-          $ref: '#/components/schemas/weekday'
-        subdivisions:
-          type: array
-          items:
-            type: string
-            example:
-            - US-FL
-            - US-TX
-    weekday:
-      type: object
-      required:
-      - date
-      - observed
-      properties:
-        date:
-          type: object
-          required:
-          - name
-          - numeric
-          properties:
-            name:
-              type: string
-              example: Saturday
-            numeric:
-              type: string
-              example: '6'
-        observed:
-          type: object
-          required:
-          - name
-          - numeric
-          properties:
-            name:
-              type: string
-              example: Friday
-            numeric:
-              type: integer
-              format: int32
-              example: 5
     response:
       type: object
       required:
@@ -258,3 +186,75 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/holiday'
+    weekday:
+      type: object
+      required:
+      - date
+      - observed
+      properties:
+        date:
+          type: object
+          required:
+          - name
+          - numeric
+          properties:
+            name:
+              type: string
+              example: Saturday
+            numeric:
+              type: string
+              example: '6'
+        observed:
+          type: object
+          required:
+          - name
+          - numeric
+          properties:
+            name:
+              type: string
+              example: Friday
+            numeric:
+              type: integer
+              format: int32
+              example: 5
+    holiday:
+      type: object
+      required:
+      - name
+      - date
+      - observed
+      - public
+      - country
+      - uuid
+      - weekday
+      properties:
+        name:
+          type: string
+          example: Independence Day
+        date:
+          type: string
+          format: date
+          example: '2015-07-04'
+        observed:
+          type: string
+          format: date
+          example: '2015-07-03'
+        public:
+          type: boolean
+          example: true
+        country:
+          type: string
+          example: US
+        uuid:
+          type: string
+          format: uuid
+          example: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+        weekday:
+          $ref: '#/components/schemas/weekday'
+        subdivisions:
+          type: array
+          items:
+            type: string
+            example:
+            - US-FL
+            - US-TX
