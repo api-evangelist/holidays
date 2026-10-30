@@ -1,4 +1,4 @@
-# Holiday API (holidays)
+# Holiday API
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,150 +66,177 @@
 
 Holiday API is a commercial reference-data service that delivers verified public holidays, observances, country and language metadata, and workday calculations for 250 countries and 3,680+ state/province subdivisions in 100+ languages. Operated by Gravity Boulevard, LLC, it exposes five JSON endpoints under https://holidayapi.com/v1/ with official client libraries for Go, Node.js, PHP, Python, Ruby, and Raku.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/holidays/main/apis.yml)
+**Areas:** Calendar · Holidays · Public Holidays · Observances · Reference Data · Countries · Language · Workdays · Business Days · Localization
 
-## Tags
+## Holiday API on APIs.io
 
-- Calendar
-- Holidays
-- Public Holidays
-- Observances
-- Reference Data
-- Countries
-- Languages
-- Workdays
-- Business Days
-- Localization
+Everything profiled for Holiday API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/holidays/](https://apis.io/providers/holidays/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-29
+- [Holiday API Countries API](https://apis.io/apis/holidays/holidays-countries-api/) — Country metadata, codes, languages, currencies, and subdivisions.
+- [Holiday API Holidays API](https://apis.io/apis/holidays/holidays-holidays-api/) — Public holidays and observances for countries, states, and provinces.
+- [Holiday API Languages API](https://apis.io/apis/holidays/holidays-languages-api/) — Supported languages for retrieving localized holiday names.
+- [Holiday API Workdays API](https://apis.io/apis/holidays/holidays-workdays-api/) — Working / business day calculations honoring country workweeks and holidays.
 
-## APIs
+### Published properties
 
-### Holiday API — Holidays
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Retrieves public holidays and observances for countries, states, and provinces. Supports filtering by year, month, day, language, previous/upcoming queries, and free-text search.
+#### Agentic access (1)
 
-- **Human URL:** [https://holidayapi.com/docs](https://holidayapi.com/docs)
-- **Base URL:** `https://holidayapi.com/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Holidays Agentic Access](https://apis.io/agentic-access/holidays/holidays-agentic-access/)
 
-- Holidays
-- Calendar
-- Public Holidays
+#### JSON Schema (5)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://holidayapi.com/docs)
-- [OpenAPI](openapi/holidays-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/holidays-holiday-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/holidays-holiday-structure.json)
-- [Example](examples/holidays-list-holidays-example.json)
-- [JSON-LD](json-ld/holidays-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Country](https://apis.io/schemas/holidays/holidays-country/)
+- [Holiday](https://apis.io/schemas/holidays/holidays-holiday/)
+- [Language](https://apis.io/schemas/holidays/holidays-language/)
+- [Response](https://apis.io/schemas/holidays/holidays-response/)
+- [Workday](https://apis.io/schemas/holidays/holidays-workday/)
 
-### Holiday API — Countries
+#### JSON Structure (5)
 
-Lists supported countries with ISO codes (alpha-2, alpha-3, numeric), spoken languages, currencies, flag image URLs, weekend days, and state/province subdivisions.
+Data models expressed in JSON Structure.
 
-- **Human URL:** [https://holidayapi.com/countries](https://holidayapi.com/countries)
-- **Base URL:** `https://holidayapi.com/v1`
+- [Holidays Country Structure](https://apis.io/json-structure/holidays/holidays-country-structure/)
+- [Holidays Holiday Structure](https://apis.io/json-structure/holidays/holidays-holiday-structure/)
+- [Holidays Language Structure](https://apis.io/json-structure/holidays/holidays-language-structure/)
+- [Holidays Response Structure](https://apis.io/json-structure/holidays/holidays-response-structure/)
+- [Holidays Workday Structure](https://apis.io/json-structure/holidays/holidays-workday-structure/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Countries
-- Reference Data
-- Subdivisions
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Holidays Context](https://apis.io/jsonld/holidays/holidays-context/)
 
-- [Documentation](https://holidayapi.com/docs)
-- [OpenAPI](openapi/holidays-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/holidays-country-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/holidays-country-structure.json)
-- [Example](examples/holidays-list-countries-example.json)
-- [JSON-LD](json-ld/holidays-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+#### Vocabulary (1)
 
-### Holiday API — Languages
+The provider's domain terms, defined.
 
-Lists supported languages (ISO 639-1 codes with documented exceptions) used to retrieve localized holiday names. Holiday API supports 100+ languages.
+- [Holiday API Domain Vocabulary](https://apis.io/vocabularies/holidays/holidays-vocabulary/)
 
-- **Human URL:** [https://holidayapi.com/languages](https://holidayapi.com/languages)
-- **Base URL:** `https://holidayapi.com/v1`
+#### Examples (6)
 
-#### Tags
+Example requests and responses.
 
-- Languages
-- Localization
-- Reference Data
+- [Holidays Error Example](https://apis.io/examples/holidays/holidays-error-example/)
+- [Holidays Get Workday Example](https://apis.io/examples/holidays/holidays-get-workday-example/)
+- [Holidays Get Workdays Example](https://apis.io/examples/holidays/holidays-get-workdays-example/)
+- [Holidays List Countries Example](https://apis.io/examples/holidays/holidays-list-countries-example/)
+- [Holidays List Holidays Example](https://apis.io/examples/holidays/holidays-list-holidays-example/)
+- [Holidays List Languages Example](https://apis.io/examples/holidays/holidays-list-languages-example/)
 
-#### Properties
+#### Collections (8)
 
-- [Documentation](https://holidayapi.com/docs)
-- [OpenAPI](openapi/holidays-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/holidays-language-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/holidays-language-structure.json)
-- [Example](examples/holidays-list-languages-example.json)
-- [JSON-LD](json-ld/holidays-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Postman and Open Collection request collections.
 
-### Holiday API — Workdays
+- [Holiday Countries API](https://apis.io/collections/holidays/open-holidays-countries-api/)
+- [Holiday Countries Holidays API](https://apis.io/collections/holidays/open-holidays-holidays-api/)
+- [Holiday Countries Languages API](https://apis.io/collections/holidays/open-holidays-languages-api/)
+- [Holiday Countries Workdays API](https://apis.io/collections/holidays/open-holidays-workdays-api/)
+- [Holiday Countries API](https://apis.io/collections/holidays/postman-holidays-countries-api/)
+- [Holiday Countries Holidays API](https://apis.io/collections/holidays/postman-holidays-holidays-api/)
+- [Holiday Countries Languages API](https://apis.io/collections/holidays/postman-holidays-languages-api/)
+- [Holiday Countries Workdays API](https://apis.io/collections/holidays/postman-holidays-workdays-api/)
 
-Two operations for working-day arithmetic that honor a country's workweek and public holidays: get the workday that occurs a given number of days after a start date, and count the number of workdays between two dates.
+#### Governance rules (2)
 
-- **Human URL:** [https://holidayapi.com/docs](https://holidayapi.com/docs)
-- **Base URL:** `https://holidayapi.com/v1`
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [Holiday API — jsonschema rules](https://apis.io/rules/holidays/holidays-jsonschema-spectral-rules/)
+- [Holiday API API Rules](https://apis.io/rules/holidays/holidays-rules/)
 
-- Workdays
-- Business Days
-- Calendar
+#### Security (1)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://holidayapi.com/docs)
-- [OpenAPI](openapi/holidays-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/holidays-workday-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/holidays-workday-structure.json)
-- [Example](examples/holidays-get-workday-example.json)
-- [Example](examples/holidays-get-workdays-example.json)
-- [JSON-LD](json-ld/holidays-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Holidays Domain Security](https://apis.io/security/holidays/holidays-domain-security/)
 
-## Common Properties
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Holidays Plans Pricing](https://apis.io/plans/holidays/holidays-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Holidays Rate Limits](https://apis.io/rate-limits/holidays/holidays-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Holidays Finops](https://apis.io/finops/holidays/holidays-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://holidayapi.com/)
-- [Portal](https://holidayapi.com/)
 - [Documentation](https://holidayapi.com/docs)
-- [OpenAPI](openapi/holidays-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/holidays-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/holidays-response-structure.json)
-- [JSON-LD](json-ld/holidays-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/holidays-rules.yml)
-- [Vocabulary](vocabulary/holidays-vocabulary.yml)
-- [Plans](plans/holidays-plans-pricing.yml)
-- [Rate Limits](rate-limits/holidays-rate-limits.yml)
 - [Pricing](https://holidayapi.com/pricing)
-- [Sign Up](https://holidayapi.com/signup)
-- [Login](https://holidayapi.com/login)
-- [Terms of Service](https://holidayapi.com/terms)
-- [Contact](https://holidayapi.com/contact)
-- [GitHub Organization](https://github.com/holidayapi)
-- [Public APIs Listing](https://github.com/public-apis/public-apis)
-- [Example](examples/holidays-error-example.json)
-- [SDK](https://github.com/holidayapi/holidayapi-go)
-- [SDK](https://github.com/holidayapi/holidayapi-node)
-- [SDK](https://github.com/holidayapi/holidayapi-php)
-- [SDK](https://github.com/holidayapi/holidayapi-python)
-- [SDK](https://github.com/holidayapi/holidayapi-ruby)
-- [SDK](https://github.com/holidayapi/holidayapi-raku)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://holidayapi.com/terms)
+- [GitHub](https://github.com/holidayapi)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 40.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 59.8 |
+| Contract governance | 27.3 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 36.9 |
+| Access clarity | 35.5 |
+
+**Agent readiness 25.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 14.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/holidays/](https://apis.io/providers/holidays/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Holiday API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/holidays/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
